@@ -8,7 +8,7 @@ create or replace function create_id_validation(email_user text default null, id
 
             if id_from_user is null and email_user is not null then
                 if email_user is not null then
-                    select id_from_user := id_user, status_user := users.status from users where
+                    select id_from_user = id_user, status_user = users.status from users where
                                                                 users.email = email_user fetch first 1 rows only;
                     if id_from_user is null then
                         raise exception 'create_id_validation received email that does not belong to the database';

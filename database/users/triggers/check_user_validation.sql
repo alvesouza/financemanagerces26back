@@ -1,4 +1,3 @@
-
 create or replace function check_user_validation() returns TRIGGER as '
 declare
     begin
@@ -8,12 +7,14 @@ declare
                 raise exception ''when user doesnt use auth account it need a password'';
                 return null;
             end if;
+
         elsif not(new.account_type = ''F'' OR new.account_type = ''G'') then
                 raise exception ''when user is not STANDARD it need to use google or facebook'';
                 return null;
         end if;
         if new.status is null then
             new.status := ''0'';
+            new.id_comfirm_route := generate_string(10);
         end if;
       RETURN new;
 

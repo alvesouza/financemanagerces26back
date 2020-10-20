@@ -6,6 +6,9 @@ router.post('/', (req, res) => {
     var value = req.body.value;
     var description = req.body.description;
     var reminderCreated = req.body.reminderCreated;
+    var id = req.cookies.id_user;
+    console.log('id user is ', req.cookies);
+    console.log('id user is ', req.signedCookies);
     res.send(true);
 });
 
