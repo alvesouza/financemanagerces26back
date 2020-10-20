@@ -24,6 +24,24 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
+// set a cookie
+app.use(function (req, res, next) {
+  // check if client sent cookie
+  var cookie = req.cookies.cookieName;
+  if (cookie === undefined) {
+    // no: set a new cookie
+    var randomNumber=Math.random().toString();
+    randomNumber=randomNumber.substring(2,randomNumber.length);
+    res.cookie('cookieName',randomNumber, {httpOnly: true });
+    console.log('cookie created successfully');
+    console.log('cookie = ', res.cookies.cookie);
+  } else {
+    // yes, cookie was already present
+    console.log('cookie exists', cookie);
+  }
+  next(); // <-- important!
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

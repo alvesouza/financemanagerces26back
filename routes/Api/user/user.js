@@ -1,4 +1,5 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 // const mailgun = require("mailgun-js");
 var nodemailer = require('nodemailer');
 // const DOMAIN = 'financemanager.com';
@@ -10,11 +11,14 @@ const router = express.Router();
 const PASS = "byt6%&*uig9HKhuf6DDCctfj9";
 const mail = "managerfinance.ces26@gmail.com";
 router.post('/', (req, res) => {
+    // var cookie = req.cookies.cookieName;
     var body = {};
     console.log(req);
     body.id = 0;
     body.name = req.body.name;
     body.email = req.body.email;
+    // res.cookie('email',body.email, {httpOnly: true, secure: true});
+    // body.cookies = req.cookies;
     console.log(body);
 
     var transporter = nodemailer.createTransport({
@@ -34,11 +38,12 @@ router.post('/', (req, res) => {
 
     transporter.sendMail(mailOptions, function(error, info){
         if (error) {
-            console.log(error);
+            console.log(/*error*/ 'erro');
         } else {
-            console.log('Email sent: ' + info.response);
+            console.log('Email sent: '/* + info.response*/);
         }
     });
+    // next();
     res.send(body);
 });
 

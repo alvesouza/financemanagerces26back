@@ -22,6 +22,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a40426-f855-4858-b0cc-d5326e4822e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/user/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603179654506</updated>
-      <workItem from="1603179655556" duration="8067000" />
+      <workItem from="1603179655556" duration="10710000" />
     </task>
     <task id="LOCAL-00001" summary="changind repo, and add to heroku">
       <created>1603180906600</created>
@@ -100,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603195423731</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="banco de dados, falta integração com o back, views e indexes">
+      <created>1603207637094</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603207637095</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +142,8 @@
     <MESSAGE value="changind repo, and add to heroku" />
     <MESSAGE value="run deploy" />
     <MESSAGE value="envio de email" />
-    <option name="LAST_COMMIT_MESSAGE" value="envio de email" />
+    <MESSAGE value="banco de dados, falta integração com o back, views e indexes" />
+    <option name="LAST_COMMIT_MESSAGE" value="banco de dados, falta integração com o back, views e indexes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2619" y="356" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603181522909">
@@ -156,9 +166,9 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1825" height="275" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603180190445" />
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603195567022">
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603207646564">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603195567022" />
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603207646564" />
   </component>
 </project>
