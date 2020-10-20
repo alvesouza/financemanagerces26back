@@ -4,9 +4,6 @@ declare
     begin
         raise notice ''id = %'', new.id_user;
         if new.account_type = ''S'' then
-            if new.login is null then
-                raise exception ''when user doesnt use auth account it need a login'';
-            end if;
             if new.password is null then
                 raise exception ''when user doesnt use auth account it need a password'';
                 return null;
