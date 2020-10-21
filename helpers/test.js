@@ -50,4 +50,32 @@ Date.prototype.toMysqlFormat = function() {
 };
 var now = new Date();
 var day = now.getDay()
+console.log(new Date().toLocaleString("YMD", {timeZone: "America/Sao_Paulo"}))
+var spTime = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+console.log('India time: '+ (new Date(spTime)).toISOString())
 console.log(now.toMysqlFormat())
+
+function calcTime(offset) {
+
+    // create Date object for current location
+    d = new Date();
+
+    // convert to msec
+    // add local time zone offset
+    // get UTC time in msec
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+
+    // create new Date object for different city
+    // using supplied offset
+    nd = new Date(utc + (3600000*offset));
+
+    // return time as a string
+    return nd;
+
+}
+var spTime = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
+console.log(new Date().getTimezoneOffset())
+var d = calcTime('-3');
+var diff = new Date()
+console.log(d.getDate())
+// date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate()
