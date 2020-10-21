@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('cwe$Fdew3!QWSWQCTYTH764qwd@!'));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(cors());
+
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
@@ -31,13 +31,15 @@ app.use(function (req, res, next) {
   // check if client sent cookie
   // var cookie = req.cookies.cookieName;
   // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
+  //console.log('Im here')
   const origin = req.headers.origin;
+  console.log(origin);
   if (true) {
     res.setHeader('Access-Control-Allow-Origin', origin);
   }
-  // res.header("Access-Control-Allow-Origin", "*");
+   // res.header("Access-Control-Allow-Origin", "*");
   //Quais são os métodos que a conexão pode realizar na API
-  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE, HEAD');
+  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
   res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
       'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
       ' Access-Control-Request-Headers');
