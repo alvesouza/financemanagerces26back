@@ -12,6 +12,7 @@ const app = express();
 const port = process.env.PORT || 3333;
 const cors = require('cors');
 
+app.use(allowCrossDomain);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
