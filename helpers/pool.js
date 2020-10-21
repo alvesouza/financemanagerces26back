@@ -48,7 +48,7 @@ var config = {
     ssl: { rejectUnauthorized: false },
     // min: env_config.pool.min,
     max: env_config.pool.max, // max number of clients in the pool
-    idleTimeoutMillis: 30000
+    idleTimeoutMillis: 1000
 }
 
 var pool = new pg.Pool(config);
