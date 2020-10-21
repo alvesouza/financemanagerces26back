@@ -47,8 +47,8 @@ app.use(function (req, res, next) {
   next(); // <-- important!
 });
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+// app.use('/', indexRouter);
+// app.use('/users', usersRouter);
 
 app.use(
     '/user',
