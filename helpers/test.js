@@ -9,21 +9,24 @@
 //     })
 // });
 
-var ob = {};
-ob.a = 2;
-ob.b = "galera"
-ob.ei = 2.475
-ob.ab = true
-ob.name
-var text = '';
-var primeiro = true
-for (const obKey in ob) {
-    if (primeiro) {
-        text = ob.constructor.name + "." + obKey + ' = ' + ob[obKey];
-        primeiro = false;
-    }else{
-        text = text + ', ' + ob.constructor.name + "." + obKey + ' = ' + ob[obKey];
-    }
-}
+// var ob = {};
+// ob.a = 2;
+// ob.b = "galera"
+// ob.ei = 2.475
+// ob.ab = true
+// ob.name
+// var text = '';
+// var primeiro = true
+// for (const obKey in ob) {
+//     if (primeiro) {
+//         text = ob.constructor.name + "." + obKey + ' = ' + ob[obKey];
+//         primeiro = false;
+//     }else{
+//         text = text + ', ' + ob.constructor.name + "." + obKey + ' = ' + ob[obKey];
+//     }
+// }
+//
+// console.log(text)
 
-console.log(text)
+const hashing = require('./hashing')
+console.log(hashing.generate_hash_sync('fesfevftrgfdvd'))

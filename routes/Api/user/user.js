@@ -1,7 +1,7 @@
 const express = require('express');
 // const mailgun = require("mailgun-js");
 var nodemailer = require('nodemailer');
-var pool = require('../../../helpers/pool')
+var pool = require('../../../helpers/pool');
 var hashing = require('../../../helpers/hashing')
 const router = express.Router();
 const PASS = "byt6%&*uig9HKhuf6DDCctfj9";
@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
         if (err) {
             console.log(err);
             res.status(400).send({error:err});
+            return;
         }
         else {
             var query = "insert into users(account_type, name, email, password) values ('S',$1,$2,$3)";
@@ -31,6 +32,7 @@ router.post('/', (req, res) => {
                 if (err) {
                     console.log(err);
                     res.status(400).send({error:err});
+                    return;
                 }
                 else {
                     query = "select id_user, id_comfirm_route from users where email= $1 fetch first 1 rows only";
@@ -64,6 +66,7 @@ router.post('/', (req, res) => {
                         console.log(res.cookies);
                         res.body.id = res.signedCookies.id;
                         res.send(body);
+                        return;
                     });
                 }
                 // res.json(result.rows[0]);
@@ -78,12 +81,14 @@ router.post('/', (req, res) => {
 
 router.get(
     '/',(req, res)=>{
+        res.body = {}
         pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
                 res.status(400).send({error:err});
+                return;
             }
-            var query = "select id_user, users.password, name from users where " +
+            var query = "select id_user, password, name from users where " +
                 "users.email = $1 fetch first 1 rows only;";
             var values = [req.body.email];
 
@@ -91,16 +96,23 @@ router.get(
                 if (err) {
                     console.log(err);
                     res.status(400).send({error:err});
+                    return;
                 }
                 else{
+                    if(result.rows.length == 0){
+                        res.status(400).send("not a user")
+                        return;
+                    }
+                    console.log(result.rows[0])
                     if (hashing.compare_password_sync(req.body.password, result.rows[0].password)){
                         res.cookie('id',result.rows[0].id_user, {httpOnly: true, signed:true });
-                        res.body.id = res.signedCookies.id;
+                        res.body.id = result.rows[0].id_user;
                         res.body.email = req.body.email;
                         res.body.name = result.rows[0].name;
                         res.send(res.body);
                     }else{
                         res.status(400).send({error:'Invalid Password'});
+                        return;
                     }
 
                 }
