@@ -27,7 +27,11 @@
   <component name="ChangeListManager">
     <list default="true" id="a8a40426-f855-4858-b0cc-d5326e4822e2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/configEnv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Api/expense/expense.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expense.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Api/tag/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/tag/tag.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/Api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/user/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -334,7 +338,21 @@
       <option name="project" value="LOCAL" />
       <updated>1603320285803</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="configuração das pool para o remoto">
+      <created>1603321203476</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1603321203476</updated>
+    </task>
+    <task id="LOCAL-00037" summary="fecha conexões">
+      <created>1603321683155</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1603321683155</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -370,8 +388,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="envio de email" />
-    <MESSAGE value="banco de dados, falta integração com o back, views e indexes" />
     <MESSAGE value="inicio de uso de cookies" />
     <MESSAGE value="banco finalizado, falta views e indexes" />
     <MESSAGE value="para a integração com o banco falta, as rotas dos expenses" />
@@ -395,7 +411,9 @@
     <MESSAGE value="retira headers de cookie" />
     <MESSAGE value="01" />
     <MESSAGE value="/expensestochart recebe apenas token" />
-    <option name="LAST_COMMIT_MESSAGE" value="/expensestochart recebe apenas token" />
+    <MESSAGE value="configuração das pool para o remoto" />
+    <MESSAGE value="fecha conexões" />
+    <option name="LAST_COMMIT_MESSAGE" value="fecha conexões" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2226" y="213" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603291797141">
@@ -430,10 +448,10 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2617" y="238" width="587" height="640" key="RollbackChangesDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603309882694" />
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603320296116">
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603321694457">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603320296116" />
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603321694457" />
     <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603296987243">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

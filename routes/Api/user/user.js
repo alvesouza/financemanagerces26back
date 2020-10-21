@@ -33,17 +33,24 @@ router.post('/', (req, res) => {
             client.query(query, values, function (err) {
                 if (err) {
                     console.log(err);
-                    client.release();
+                    try {
+                        client.release();
+                    }catch (e) {
+                        console.log(e);
+                    }
                     res.status(400).send({error:err});
                     return;
-                }
-                else {
+                }else {
                     query = "select id_user, id_comfirm_route from users where email= $1 fetch first 1 rows only";
                     values = [req.body.email]
 
                         client.query(query, values, function (err, result_01){
 
-                        client.release();
+                            try {
+                                client.release();
+                            }catch (e) {
+                                console.log(e);
+                            }
                         console.log(result_01.rows);
                         if(result_01.rows[0].length != 0) {
                             var transporter = nodemailer.createTransport({
@@ -95,6 +102,11 @@ router.post(
         pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 res.status(400).send({error: err});
                 return;
             }
@@ -104,16 +116,23 @@ router.post(
 
             client.query(query, values, function (err, result) {
 
-                client.release();
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
 
-                    client.release();
                     res.status(400).send({error: err});
                     return;
                 } else {
 
-                    client.release();
+                    try {
+                        client.release();
+                    }catch (e) {
+                        console.log(e);
+                    }
                     if (result.rows.length == 0) {
                         res.status(400).send("not a user")
                         return;

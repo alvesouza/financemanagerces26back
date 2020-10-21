@@ -9,6 +9,11 @@ router.post('/', (req, res) => {
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
             res.status(400).send({error: err});
             return;
         } else {
@@ -26,7 +31,11 @@ router.post('/', (req, res) => {
             }
 
             client.query(query, values, function (err/*, result*/) {
-                client.release();
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
@@ -47,6 +56,11 @@ router.delete('/', (req, res) => {
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
             res.status(400).send({error: err});
             return;
         } else {
@@ -54,7 +68,11 @@ router.delete('/', (req, res) => {
             var values = [req.body.id, req.signedCookies.id];
 
             client.query(query, values, function (err/*, result*/) {
-                client.release();
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});

@@ -51,7 +51,11 @@ router.get('/', (req, res) => {
                     return;
                 } else {
                     console.log(result.rows);
-                    client.release()
+                    try {
+                        client.release();
+                    }catch (e) {
+                        console.log(e);
+                    }
                     res.status(200).send(result.rows);
                     return;
                 }

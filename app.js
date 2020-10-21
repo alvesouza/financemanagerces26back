@@ -30,7 +30,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 
 // set a cookie
 app.use(cors());
-/*app.use(function (req, res, next) {
+app.use(function (req, res, next) {
   // check if client sent cookie
   // var cookie = req.cookies.cookieName;
   // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
@@ -44,13 +44,13 @@ app.use(cors());
   //   res.setHeader('Access-Control-Allow-Origin', '*');
   // }
   //
-  /*res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   // //Quais são os métodos que a conexão pode realizar na API
-  res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
-       'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
-       ' Access-Control-Request-Headers');
-   res.setHeader('Access-Control-Allow-Credentials', 'true');
+  // res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
+  // res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
+  //      'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
+  //      ' Access-Control-Request-Headers');
+  //  res.setHeader('Access-Control-Allow-Credentials', 'true');
   //res.setHeader('Access-Control-Allow-Origin', '*');
   // if (cookie === undefined) {
   //   // no: set a new cookie
@@ -64,7 +64,7 @@ app.use(cors());
   //   console.log('cookie exists', cookie);
   // }
   next(); // <-- important!
-});*/
+});
 
 
 
