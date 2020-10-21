@@ -107,13 +107,13 @@ router.get('/', (req, res) => {
                 " where id_user = $1";
             var values = [ req.signedCookies.id];
             var i = 2;
-            for (const obKey in req.body) {
+            for (const obKey in req.query) {
                 if(obKey.localeCompare('id') == 0){
                     query = query + ' and id_expense = $' + i;
                 }else {
                     query = query + ' and ' + obKey + ' = $' + i;
                 }
-                values.push(req.body[obKey])
+                values.push(req.query[obKey])
                 i += 1;
             }
             console.log('query is :\n', query);
