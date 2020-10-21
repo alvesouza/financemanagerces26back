@@ -33,6 +33,7 @@ router.post('/', (req, res) => {
             client.query(query, values, function (err) {
                 if (err) {
                     console.log(err);
+                    client.release();
                     res.status(400).send({error:err});
                     return;
                 }
@@ -41,6 +42,8 @@ router.post('/', (req, res) => {
                     values = [req.body.email]
 
                         client.query(query, values, function (err, result_01){
+
+                        client.release();
                         console.log(result_01.rows);
                         if(result_01.rows[0].length != 0) {
                             var transporter = nodemailer.createTransport({
@@ -100,11 +103,17 @@ router.post(
             var values = [req.body.email];
 
             client.query(query, values, function (err, result) {
+
+                client.release();
                 if (err) {
                     console.log(err);
+
+                    client.release();
                     res.status(400).send({error: err});
                     return;
                 } else {
+
+                    client.release();
                     if (result.rows.length == 0) {
                         res.status(400).send("not a user")
                         return;

@@ -17,6 +17,7 @@ router.post('/', (req, res) => {
                 var values = [req.signedCookies.id, tag];
 
                 client.query(query, values, function (err/*, result*/) {
+                    client.release();
                     if (err) {
                         console.log(err);
                         res.status(400).send({error: err});

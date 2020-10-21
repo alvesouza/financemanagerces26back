@@ -46,10 +46,12 @@ router.get('/', (req, res) => {
             client.query(query, values, function (err, result) {
                 if (err) {
                     console.log(err);
+                    client.release()
                     res.status(400).send({error: err});
                     return;
                 } else {
-                    console.log(result.rows)
+                    console.log(result.rows);
+                    client.release()
                     res.status(200).send(result.rows);
                     return;
                 }

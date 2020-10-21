@@ -26,6 +26,7 @@ router.post('/', (req, res) => {
             }
 
             client.query(query, values, function (err/*, result*/) {
+                client.release();
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
@@ -53,6 +54,7 @@ router.delete('/', (req, res) => {
             var values = [req.body.id, req.signedCookies.id];
 
             client.query(query, values, function (err/*, result*/) {
+                client.release();
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
@@ -85,6 +87,8 @@ router.put('/',(req, res) => {
             var values = [req.body.name, req.body.email, hashing.generate_hash_sync(req.body.password)];
 
             client.query(query, values, function (err/*, result*/) {
+
+                client.release();
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
@@ -123,6 +127,8 @@ router.get('/', (req, res) => {
             }
             console.log('query is :\n', query);
             client.query(query, values, function (err, result) {
+
+                client.release();
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
