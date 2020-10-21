@@ -2,11 +2,25 @@ const express = require('express');
 var pool = require('../../../helpers/pool');
 const router = express.Router();
 
+function calcTime(offset, option = {days:10}) {
+    option = option||{};
+    option.days = option.days||0;
+    d = new Date();
+
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000) ;
+    nd = new Date(utc + (3600000*offset)+ 60000*60*24*option.days);
+
+    // return time as a string
+    return nd;
+
+}
 router.get('/', (req, res) => {
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
     req.body = req.query;
     req.signedCookies.id = req.body.token;
+    var begin = calcTime('-3', {days:-7});
+    var end = calcTime('-3');
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
