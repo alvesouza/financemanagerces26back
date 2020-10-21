@@ -43,14 +43,14 @@ app.use(function (req, res, next) {
   //   res.setHeader('Access-Control-Allow-Origin', '*');
   // }
   //
-  //  // res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   // //Quais são os métodos que a conexão pode realizar na API
-  // res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
-  // res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
-  //     'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
-  //     ' Access-Control-Request-Headers');
-  // res.setHeader('Access-Control-Allow-Credentials', 'true');
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
+       'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
+       ' Access-Control-Request-Headers');
+   res.setHeader('Access-Control-Allow-Credentials', 'true');
+  //res.setHeader('Access-Control-Allow-Origin', '*');
   // if (cookie === undefined) {
   //   // no: set a new cookie
   //   var randomNumber=Math.random().toString();
