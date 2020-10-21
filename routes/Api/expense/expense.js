@@ -127,7 +127,9 @@ router.put('/',(req, res) => {
 router.get('/', (req, res) => {
     console.log('req.cookies user is ', req.cookies);
     console.log('req.signedCookies user is ', req.signedCookies);//Se conecta com o banco
-    req.signedCookies.token = req.body.id;
+    req.body = req.query;
+    req.signedCookies.id = req.body.token;
+
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -141,7 +143,7 @@ router.get('/', (req, res) => {
             for (const obKey in req.query) {
                 if(obKey.localeCompare('id') == 0){
                     query = query + ' and id_expense = $' + i;
-                }else {
+                }else if(obKey.localeCompare('token') != 0){
                     query = query + ' and ' + obKey + ' = $' + i;
                 }
                 values.push(req.query[obKey])
