@@ -8,6 +8,7 @@ const usersRouter = require('./routes/users');
 const userApi = require('./routes/Api/user/user');
 const tagApi = require('./routes/Api/tag/tag')
 const expenseApi = require('./routes/Api/expense/expense')
+const expensesChartApi = require('./routes/Api/expense/expensesToChart')
 const app = express();
 const port = process.env.PORT || 3333;
 const cors = require('cors');
@@ -81,6 +82,7 @@ app.use('/expense',
 app.use('/tag',
     tagApi
 );
+app.use('/expensestochart', expensesChartApi);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

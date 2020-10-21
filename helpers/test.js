@@ -55,19 +55,21 @@ var spTime = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"})
 console.log('India time: '+ (new Date(spTime)).toISOString())
 console.log(now.toMysqlFormat())
 
-function calcTime(offset, option = {days:10, hours:0, months:1, }) {
-
+function calcTime(offset, option = {days:10}) {
+    option = option||{};
+    option.days = option.days||0;
     // create Date object for current location
     d = new Date();
 
     // convert to msec
     // add local time zone offset
     // get UTC time in msec
-    utc = d.getTime() + (d.getTimezoneOffset() * 60000);
-
+    utc = d.getTime() + (d.getTimezoneOffset() * 60000) ;
+    // console.log(utc)
     // create new Date object for different city
     // using supplied offset
-    nd = new Date(utc + (3600000*offset));
+    // console.log(option.days)
+    nd = new Date(utc + (3600000*offset)+ 60000*60*24*option.days);
 
     // return time as a string
     return nd;
@@ -75,7 +77,9 @@ function calcTime(offset, option = {days:10, hours:0, months:1, }) {
 }
 var spTime = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"});
 console.log(new Date().getTimezoneOffset())
-var d = calcTime('-3');
+var d = calcTime('-3', {days:-7});
 var diff = new Date()
 console.log(d.getDate())
+console.log(d.getMonth())
+console.log(d.getFullYear())
 // date.getFullYear()+'-' + (date.getMonth()+1) + '-'+date.getDate()
