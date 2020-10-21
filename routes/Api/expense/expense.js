@@ -5,6 +5,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
+    req.signedCookies.id = req.body.id;
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -41,7 +42,7 @@ router.post('/', (req, res) => {
 });
 
 router.delete('/', (req, res) => {
-    res.send(true);pool.connect(function (err, client/*, done*/) {
+    pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
             res.status(400).send({error: err});
@@ -71,6 +72,8 @@ router.put('/',(req, res) => {
     // var description = req.body.description;
     // var paid = req.body.paid;
     // var reminderCreated = req.body.reminderCreated;
+
+    req.signedCookies.id = req.body.id;
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -97,6 +100,7 @@ router.put('/',(req, res) => {
 router.get('/', (req, res) => {
     console.log('req.cookies user is ', req.cookies);
     console.log('req.signedCookies user is ', req.signedCookies);//Se conecta com o banco
+    req.signedCookies.id = req.body.id;
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);

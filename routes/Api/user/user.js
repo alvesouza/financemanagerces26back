@@ -86,10 +86,13 @@ router.post('/', (req, res) => {
 router.post(
     '/login',(req, res)=>{
         res.body = {}
+
+        req.signedCookies.id = req.body.id;
+
         pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
-                res.status(400).send({error:err});
+                res.status(400).send({error: err});
                 return;
             }
             var query = "select id_user, password, name from users where " +
@@ -99,29 +102,29 @@ router.post(
             client.query(query, values, function (err, result) {
                 if (err) {
                     console.log(err);
-                    res.status(400).send({error:err});
+                    res.status(400).send({error: err});
                     return;
-                }
-                else{
-                    if(result.rows.length == 0){
+                } else {
+                    if (result.rows.length == 0) {
                         res.status(400).send("not a user")
                         return;
                     }
                     console.log(result.rows[0])
-                    if (hashing.compare_password_sync(req.body.password, result.rows[0].password)){
-                        res.cookie('id',result.rows[0].id_user, {httpOnly: true, signed:true });
+                    if (hashing.compare_password_sync(req.body.password, result.rows[0].password)) {
+                        res.cookie('id', result.rows[0].id_user, {httpOnly: true, signed: true});
                         res.body.id = result.rows[0].id_user;
                         res.body.email = req.body.email;
                         res.body.name = result.rows[0].name;
                         res.send(res.body);
-                    }else{
-                        res.status(400).send({error:'Invalid Password'});
+                    } else {
+                        res.status(400).send({error: 'Invalid Password'});
                         return;
                     }
 
                 }
             });
         });
+
     }
 
 );
