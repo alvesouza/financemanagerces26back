@@ -33,18 +33,21 @@ app.use(function (req, res, next) {
   // var cookie = req.cookies.cookieName;
   // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
   //console.log('Im here')
-  const origin = req.headers.origin;
+  const origin = req.get('origin');
+  console.log(req.headers)
   console.log(origin);
-  if (true) {
+  if (origin) {
     res.setHeader('Access-Control-Allow-Origin', origin);
+  }else{
+    res.setHeader('Access-Control-Allow-Origin', '*');
   }
    // res.header("Access-Control-Allow-Origin", "*");
   //Quais são os métodos que a conexão pode realizar na API
-  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
+  res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
       'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
       ' Access-Control-Request-Headers');
-  res.header('Access-Control-Allow-Credentials', 'true');
+  res.setHeader('Access-Control-Allow-Credentials', 'true');
   app.use(cors());
   // if (cookie === undefined) {
   //   // no: set a new cookie
