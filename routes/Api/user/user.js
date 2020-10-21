@@ -3,9 +3,10 @@ const express = require('express');
 var nodemailer = require('nodemailer');
 var pool = require('../../../helpers/pool');
 var hashing = require('../../../helpers/hashing')
+var config = require('../../../config');
 const router = express.Router();
-const PASS = "byt6%&*uig9HKhuf6DDCctfj9";
-const mail = "managerfinance.ces26@gmail.com";
+const PASSWORD = config.email.email;
+const EMAIL = config.email.password;
 router.post('/', (req, res) => {
     // var cookie = req.cookies.cookieName;
     var body = {};
@@ -43,13 +44,13 @@ router.post('/', (req, res) => {
                         var transporter = nodemailer.createTransport({
                             service: 'gmail',
                             auth: {
-                                user: mail,
-                                pass: PASS
+                                user: EMAIL,
+                                pass: PASSWORD
                             }
                         });
 
                         var mailOptions = {
-                            from: mail,
+                            from: EMAIL,
                             to: body.email,
                             subject: 'Confirm email',
                             text: 'link: ' + result_01.rows[0].id_comfirm_route
@@ -63,8 +64,7 @@ router.post('/', (req, res) => {
                             }
                         });
                         res.cookie('id',result_01.rows[0].id_user, {httpOnly: true, signed:true });
-                        console.log(res.cookies);
-                        res.body.id = res.signedCookies.id;
+                        res.body.id = result_01.rows[0].id_user;
                         res.send(body);
                         return;
                     });
