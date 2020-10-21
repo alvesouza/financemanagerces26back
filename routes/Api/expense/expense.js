@@ -106,7 +106,11 @@ router.put('/',(req, res) => {
 
             client.query(query, values, function (err/*, result*/) {
 
-                client.release();
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});
@@ -146,7 +150,11 @@ router.get('/', (req, res) => {
             console.log('query is :\n', query);
             client.query(query, values, function (err, result) {
 
-                client.release();
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
                     res.status(400).send({error: err});

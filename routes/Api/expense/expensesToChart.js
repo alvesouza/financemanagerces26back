@@ -46,7 +46,11 @@ router.get('/', (req, res) => {
             client.query(query, values, function (err, result) {
                 if (err) {
                     console.log(err);
-                    client.release()
+                    try {
+                        client.release();
+                    }catch (e) {
+                        console.log(e);
+                    }
                     res.status(400).send({error: err});
                     return;
                 } else {
