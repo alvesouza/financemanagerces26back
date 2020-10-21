@@ -8,15 +8,22 @@ values (2, 'Luz');
 insert into tags_tag_view (id_user, tag) values (2, 'Telefone');
 insert into tags_tag_view (id_user, tag) values (2, 'Celular');
 select * from tags_tag_view;
-insert into expenses(id_user, description, id_tag, value, reminder)
+insert into expenses(id_user, description, id_tag, value, reminderCreated)
 values (2, 'Conta da Luz', 1, 275.57, '2020-01-14'),
        (2, 'Conta do telefone', 2, 175.57, '2020-01-14');
 
-insert into expenses(id_user, description, value,paid, reminder, paid_day)
+insert into expenses(id_user, description, value,paid, reminderCreated, paid_day)
 values (1, 'Conta da Telefone', 275.57, true, '2018-11-04', '2018-11-03');
 
-insert into expenses_tag_order_user_id(id_user, tag, description, value, reminder, paid)
+insert into expenses_tag_order_user_id(id_user, tag, description, value, remindercreated, paid)
 values (3, 'licor', 'Conta da gás', 275.57, '2020-01-14', null);
+
+select * from expenses_tag_order_user_id
+where remindercreated < '2100-04-04'
+  and
+      remindercreated >= '2050-04-04';
+
+
 
 select * from expenses_tag_order_user_id;
 

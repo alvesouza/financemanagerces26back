@@ -26,13 +26,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8a40426-f855-4858-b0cc-d5326e4822e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/expenses/indexes/expenses_reminder.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/tags/indexes/tags_tag_idx.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/tags/indexes/tags_user_idx.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helpers/pool.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/pool.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knexfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/configEnv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/user/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/insert_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_database.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603294811492</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="configurado para atender variaveis de ambiente do heroku ou da maquina, assim garate maior potreção dos dados">
+      <created>1603295424161</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1603295424161</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -212,7 +223,8 @@
     <MESSAGE value="termino da integracao com o banco, falta debugar" />
     <MESSAGE value="finalização dos testes" />
     <MESSAGE value="knexfile, para escolha de variaveis de ambiente" />
-    <option name="LAST_COMMIT_MESSAGE" value="knexfile, para escolha de variaveis de ambiente" />
+    <MESSAGE value="configurado para atender variaveis de ambiente do heroku ou da maquina, assim garate maior potreção dos dados" />
+    <option name="LAST_COMMIT_MESSAGE" value="configurado para atender variaveis de ambiente do heroku ou da maquina, assim garate maior potreção dos dados" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2226" y="213" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603291797141">
@@ -223,13 +235,33 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2619" y="356" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603181522909" />
-    <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
-    <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
-    <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
-    <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603292154549">
+    <state width="1240" height="265" key="GridCell.Tab.0.bottom" timestamp="1603297469540">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603292154549" />
+    <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
+    <state width="1240" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603297469540" />
+    <state width="1240" height="265" key="GridCell.Tab.0.center" timestamp="1603297469540">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
+    <state width="1240" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603297469540" />
+    <state width="1240" height="265" key="GridCell.Tab.0.left" timestamp="1603297469540">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
+    <state width="1240" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603297469540" />
+    <state width="1240" height="265" key="GridCell.Tab.0.right" timestamp="1603297469540">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603288514258" />
+    <state width="1240" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603297469540" />
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603295430828">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603295430828" />
+    <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603296987243">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603296987243" />
   </component>
 </project>

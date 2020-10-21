@@ -130,7 +130,18 @@ create table tags(
     tag VARCHAR(20) NOT NULL,
     unique(id_user, tag)
 );
+-- drop index tags_tag_idx;
+create INDEX
+    concurrently tags_tag_idx
+    on
+        tags
+            using hash(tag);
 
+create INDEX
+    concurrently tags_user_idx
+    on
+        tags
+            using hash(id_user);
 create or replace VIEW tags_tag_view AS
     select * from tags order by tag asc, id_user asc, id_tag asc;
 
@@ -158,7 +169,11 @@ create table expenses(
 --         FOREIGN KEY(id_tag)
 --             references tags(id_tag)
 );
-
+create INDEX
+    concurrently expenses_date_idx
+    on
+        expenses
+            using btree(reminderCreated);
 -- drop view expenses_tag_order_user_id;
 create or replace VIEW expenses_tag_order_user_id AS
     SELECT expenses.id_user as id_user,
