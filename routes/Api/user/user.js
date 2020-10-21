@@ -83,8 +83,8 @@ router.post('/', (req, res) => {
     // res.send(body);
 });
 
-router.get(
-    '/',(req, res)=>{
+router.post(
+    '/login',(req, res)=>{
         res.body = {}
         pool.connect(function (err, client/*, done*/) {
             if (err) {
