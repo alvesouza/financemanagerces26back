@@ -30,10 +30,18 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.use(function (req, res, next) {
   // check if client sent cookie
   // var cookie = req.cookies.cookieName;
-  res.header("Access-Control-Allow-Origin", "*");
+  // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
+  const origin = req.headers.origin;
+  if (true) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  }
+  // res.header("Access-Control-Allow-Origin", "*");
   //Quais são os métodos que a conexão pode realizar na API
-  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
-  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+  res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE, HEAD');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, ' +
+      'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
+      ' Access-Control-Request-Headers');
+  res.header('Access-Control-Allow-Credentials', true);
   app.use(cors());
   // if (cookie === undefined) {
   //   // no: set a new cookie
