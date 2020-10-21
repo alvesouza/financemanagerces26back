@@ -12,20 +12,7 @@ const app = express();
 const port = process.env.PORT || 3333;
 const cors = require('cors');
 
-// app.use(allowCrossDomain);
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser('cwe$Fdew3!QWSWQCTYTH764qwd@!'));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
-
 // set a cookie
 app.use(function (req, res, next) {
   // check if client sent cookie
@@ -42,7 +29,7 @@ app.use(function (req, res, next) {
       'X-Requested-With, Access-Control-Allow-Headers, Origin, Accept, Access-Control-Request-Method,' +
       ' Access-Control-Request-Headers');
   res.header('Access-Control-Allow-Credentials', 'true');
-  app.use(cors());
+  // app.use(cors());
   // if (cookie === undefined) {
   //   // no: set a new cookie
   //   var randomNumber=Math.random().toString();
@@ -56,6 +43,20 @@ app.use(function (req, res, next) {
   // }
   next(); // <-- important!
 });
+// app.use(allowCrossDomain);
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(logger('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser('cwe$Fdew3!QWSWQCTYTH764qwd@!'));
+app.use(express.static(path.join(__dirname, 'public')));
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
