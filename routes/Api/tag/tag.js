@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.post('/', (req, res) => {
     var tag = req.body.tag;
-    req.signedCookies.id = req.body.id;
+    req.signedCookies.id = req.body.token;
     if(req.signedCookies.id != null){
         //Se conecta com o banco
         pool.connect(function (err, client/*, done*/) {
@@ -34,7 +34,7 @@ router.post('/', (req, res) => {
 router.get('/', (req, res) => {
     var tag = req.body.tag;
     req.body = req.query;
-    req.signedCookies.id = req.body.id;
+    req.signedCookies.id = req.body.token;
     console.log(tag);
     if(req.signedCookies.id != null){
         //Se conecta com o banco

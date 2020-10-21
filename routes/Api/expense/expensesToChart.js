@@ -2,9 +2,11 @@ const express = require('express');
 var pool = require('../../../helpers/pool');
 const router = express.Router();
 
-router.post('/', (req, res) => {
+router.get('/', (req, res) => {
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
+    req.body = req.query;
+    req.signedCookies.id = req.body.token;
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);

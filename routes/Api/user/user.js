@@ -11,7 +11,7 @@ router.post('/', (req, res) => {
     // var cookie = req.cookies.cookieName;
     var body = {};
     console.log(req.body);
-    body.id = 0;
+    body.token = 0;
     body.name = req.body.name;
     body.email = req.body.email;
     res.body = {};
@@ -67,7 +67,7 @@ router.post('/', (req, res) => {
                                 }
                             });
                             res.cookie('id', result_01.rows[0].id_user, {httpOnly: true, signed: true});
-                            body.id = result_01.rows[0].id_user;
+                            body.token = result_01.rows[0].id_user;
                             res.send(body);
                             return;
                         }
@@ -87,7 +87,7 @@ router.post(
     '/login',(req, res)=>{
         res.body = {}
 
-        req.signedCookies.id = req.body.id;
+        req.signedCookies.id = req.body.token;
 
         pool.connect(function (err, client/*, done*/) {
             if (err) {
@@ -112,7 +112,7 @@ router.post(
                     console.log(result.rows[0])
                     if (hashing.compare_password_sync(req.body.password, result.rows[0].password)) {
                         res.cookie('id', result.rows[0].id_user, {httpOnly: true, signed: true});
-                        res.body.id = result.rows[0].id_user;
+                        res.body.token = result.rows[0].id_user;
                         res.body.email = req.body.email;
                         res.body.name = result.rows[0].name;
                         res.send(res.body);
