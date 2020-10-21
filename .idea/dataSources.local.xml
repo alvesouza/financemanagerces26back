@@ -7,20 +7,14 @@
       <user-name>oujsfxlruvvmux</user-name>
       <schema-mapping />
     </data-source>
-    <data-source name="heroku finance" uuid="290033dd-d1b3-4a03-bf79-0fcf47a1a2fa">
+    <data-source name="heroku finance" uuid="6dfc309c-4840-444f-b998-95ce073587d8">
       <database-info product="PostgreSQL" version="12.4 (Ubuntu 12.4-1.pgdg16.04+1)" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="12.4">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>oujsfxlruvvmux</user-name>
-      <schema-mapping>
-        <introspection-scope>
-          <node kind="database" qname="@">
-            <node kind="schema" qname="@" />
-          </node>
-        </introspection-scope>
-      </schema-mapping>
+      <user-name>xzdyuyszpnfeob</user-name>
+      <schema-mapping />
     </data-source>
   </component>
 </project>

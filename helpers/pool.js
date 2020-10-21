@@ -36,8 +36,8 @@ const Port = 5432
 //     idleTimeoutMillis: 30000
 // }
 var config = {
-    connectionString: 'postgres://oujsfxlruvvmux:37cfde7dd3dc2197af0fa7f0a7dd42dbbb671758cecee3d1fecf244c0dfd4233@ec2-3-' +
-        '218-75-21.compute-1.amazonaws.com:5432/d85ujhir1i7gco',
+    connectionString: 'postgres://xzdyuyszpnfeob:564008abf9cd23b0f0f47757ca4bfcd262e0bbeb972' +
+                '2803f759651acb00ca874@ec2-34-202-65-210.compute-1.amazonaws.com:5432/dd9p8pp2k0skrh',
     ssl: { rejectUnauthorized: false },
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000

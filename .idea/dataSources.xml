@@ -7,11 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="heroku finance" uuid="290033dd-d1b3-4a03-bf79-0fcf47a1a2fa">
+    <data-source source="LOCAL" name="heroku finance" uuid="6dfc309c-4840-444f-b998-95ce073587d8">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql:d85ujhir1i7gco</jdbc-url>
+      <jdbc-url>jdbc:postgresql://ec2-34-202-65-210.compute-1.amazonaws.com:5432/dd9p8pp2k0skrh</jdbc-url>
     </data-source>
   </component>
 </project>
