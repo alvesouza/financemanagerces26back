@@ -14,7 +14,7 @@ module.exports = {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
-    idleTime:5000,
+    idleTime:1000,
     email:{
       email: "managerfinance.ces26@gmail.com",
       password: "byt6%&*uig9HKhuf6DDCctfj9"
@@ -30,7 +30,7 @@ module.exports = {
     },
     pool: {
       min: 2,
-      max: 10
+      max: 3
     },
     idleTime:5000,
     migrations: {
@@ -42,14 +42,14 @@ module.exports = {
     client: 'pg',
     connection: process.env.DATABASE_URL,
     pool: {
-      min: 2,
-      max: 5
+      min: process.env.DB_POOL_MIN,
+      max: process.env.DB_POOL_MAX
     },
     migrations: {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
-    idleTime:30000,
+    idleTime:2000,
     email:{
       email: process.env.EMAIL_LOGIN,
       password: process.env.EMAIL_PASSWORD
