@@ -7,8 +7,8 @@ module.exports = {
     connection: 'postgres://xzdyuyszpnfeob:564008abf9cd23b0f0f47757ca4bfcd262e0bbeb972' +
         '2803f759651acb00ca874@ec2-34-202-65-210.compute-1.amazonaws.com:5432/dd9p8pp2k0skrh',
     pool: {
-      min: 2,
-      max: 10
+      min: 1,
+      max: 2
     },
     migrations: {
       tableName: 'knex_migrations',
@@ -41,7 +41,7 @@ module.exports = {
     connection: process.env.DATABASE_URL,
     pool: {
       min: 2,
-      max: 10
+      max: 5
     },
     migrations: {
       tableName: 'knex_migrations',
