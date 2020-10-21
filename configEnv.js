@@ -14,6 +14,7 @@ module.exports = {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
+    idleTime:5000,
     email:{
       email: "managerfinance.ces26@gmail.com",
       password: "byt6%&*uig9HKhuf6DDCctfj9"
@@ -31,6 +32,7 @@ module.exports = {
       min: 2,
       max: 10
     },
+    idleTime:5000,
     migrations: {
       tableName: 'knex_migrations'
     }
@@ -47,6 +49,7 @@ module.exports = {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
+    idleTime:30000,
     email:{
       email: process.env.EMAIL_LOGIN,
       password: process.env.EMAIL_PASSWORD

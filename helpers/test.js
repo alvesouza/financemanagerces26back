@@ -55,7 +55,7 @@ var spTime = new Date().toLocaleString("en-US", {timeZone: "America/Sao_Paulo"})
 console.log('India time: '+ (new Date(spTime)).toISOString())
 console.log(now.toMysqlFormat())
 
-function calcTime(offset) {
+function calcTime(offset, option = {days:10, hours:0, months:1, }) {
 
     // create Date object for current location
     d = new Date();
