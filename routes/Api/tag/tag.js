@@ -33,7 +33,7 @@ router.post('/', (req, res) => {
 
 router.get('/', (req, res) => {
     var tag = req.body.tag;
-    req.body = req.params;
+    req.body = req.query;
     req.signedCookies.id = req.body.id;
     console.log(tag);
     if(req.signedCookies.id != null){
