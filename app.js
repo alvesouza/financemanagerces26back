@@ -12,7 +12,7 @@ const app = express();
 const port = process.env.PORT || 3333;
 const cors = require('cors');
 
-app.use(allowCrossDomain);
+// app.use(allowCrossDomain);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -33,6 +33,7 @@ app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   //Quais são os métodos que a conexão pode realizar na API
   res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
   app.use(cors());
   // if (cookie === undefined) {
   //   // no: set a new cookie
