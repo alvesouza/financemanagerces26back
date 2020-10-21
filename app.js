@@ -12,6 +12,7 @@ const app = express();
 const port = process.env.PORT || 3333;
 const cors = require('cors');
 
+
 // app.use(allowCrossDomain);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -23,8 +24,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser('cwe$Fdew3!QWSWQCTYTH764qwd@!'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-
 app.listen(port, () => console.log(`Listening on port ${port}`));
+
 
 // set a cookie
 app.use(function (req, res, next) {
@@ -58,6 +59,8 @@ app.use(function (req, res, next) {
   // }
   next(); // <-- important!
 });
+
+
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
