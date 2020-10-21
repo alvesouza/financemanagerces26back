@@ -10,6 +10,11 @@
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select>
       <path>
@@ -21,17 +26,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8a40426-f855-4858-b0cc-d5326e4822e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/helpers/hashing.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/pool.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/helpers/test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa/storage_v2/_src_/database/d85ujhir1i7gco.r4Aw8Q.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa/storage_v2/_src_/database/d85ujhir1i7gco.r4Aw8Q/schema/information_schema.FNRwLQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa/storage_v2/_src_/database/d85ujhir1i7gco.r4Aw8Q/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa/storage_v2/_src_/database/d85ujhir1i7gco.r4Aw8Q/schema/public.abK9xQ.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/290033dd-d1b3-4a03-bf79-0fcf47a1a2fa/storage_v2/_src_/database/d85ujhir1i7gco.r4Aw8Q/schema/public.abK9xQ.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/expenses/triggers/insert_expenses_tag.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/expenses/views/expenses_tag_order_user_id.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/tags/views/tags_ordered_tag.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/insert_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/users/create_id_validation.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/users/create_id_validation.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/users/triggers/check_user_validation.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/users/triggers/check_user_validation.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/users/create_id_validation.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/users/functions/create_id_validation.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helpers/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/helpers/test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Api/expense/expense.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expense.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Api/tag/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/tag/tag.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/user/user.js" afterDir="false" />
@@ -79,6 +89,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/database/users/functions" />
       <recent name="$PROJECT_DIR$/helpers" />
       <recent name="$PROJECT_DIR$/routes/Api" />
     </key>
@@ -143,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603217382929</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="para a integração com o banco falta, as rotas dos expenses">
+      <created>1603234124748</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1603234124748</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +199,8 @@
     <MESSAGE value="inicio de uso de cookies" />
     <MESSAGE value="banco finalizado, falta views e indexes" />
     <MESSAGE value="para a integração com o banco falta, as rotas dos expenses" />
-    <option name="LAST_COMMIT_MESSAGE" value="para a integração com o banco falta, as rotas dos expenses" />
+    <MESSAGE value="termino da integracao com o banco, falta debugar" />
+    <option name="LAST_COMMIT_MESSAGE" value="termino da integracao com o banco, falta debugar" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2226" y="213" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603217787394">
@@ -192,26 +211,26 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2619" y="356" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603181522909" />
-    <state width="1291" height="265" key="GridCell.Tab.0.bottom" timestamp="1603233221811">
+    <state width="1291" height="265" key="GridCell.Tab.0.bottom" timestamp="1603283123430">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603233221811" />
-    <state width="1165" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603224423015" />
-    <state width="1291" height="265" key="GridCell.Tab.0.center" timestamp="1603233221811">
+    <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603283123430" />
+    <state width="1240" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603280489626" />
+    <state width="1291" height="265" key="GridCell.Tab.0.center" timestamp="1603283123430">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603233221811" />
-    <state width="1165" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603224423014" />
-    <state width="1291" height="265" key="GridCell.Tab.0.left" timestamp="1603233221811">
+    <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603283123430" />
+    <state width="1240" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603280489626" />
+    <state width="1291" height="265" key="GridCell.Tab.0.left" timestamp="1603283123430">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603233221811" />
-    <state width="1165" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603224423014" />
-    <state width="1291" height="265" key="GridCell.Tab.0.right" timestamp="1603233221811">
+    <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603283123430" />
+    <state width="1240" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603280489626" />
+    <state width="1291" height="265" key="GridCell.Tab.0.right" timestamp="1603283123430">
       <screen x="0" y="29" width="1920" height="1051" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603233221811" />
-    <state width="1165" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603224423014" />
+    <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603283123430" />
+    <state width="1240" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603280489626" />
     <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603207646564">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

@@ -1,6 +1,4 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
-const format = require('pg-format');
 // const mailgun = require("mailgun-js");
 var nodemailer = require('nodemailer');
 var pool = require('../../../helpers/pool')
@@ -20,7 +18,7 @@ router.post('/', (req, res) => {
     console.log(body);
 
     //Se conecta com o banco
-    pool.connect(function (err, client, done) {
+    pool.connect(function (err, client) {
         if (err) {
             console.log(err);
             res.status(400).send({error:err});
@@ -29,7 +27,7 @@ router.post('/', (req, res) => {
             var query = "insert into users(account_type, name, email, password) values ('S',$1,$2,$3)";
             var values = [req.body.name, req.body.email, hashing.generate_hash_sync(req.body.password)];
 
-            client.query(query, values, function (err, result) {
+            client.query(query, values, function (err) {
                 if (err) {
                     console.log(err);
                     res.status(400).send({error:err});
@@ -55,7 +53,7 @@ router.post('/', (req, res) => {
                             text: 'link: ' + result_01.rows[0].id_comfirm_route
                         };
 
-                        transporter.sendMail(mailOptions, function(error, info){
+                        transporter.sendMail(mailOptions, function(error/*, info*/){
                             if (error) {
                                 console.log(/*error*/ 'erro');
                             } else {
@@ -80,14 +78,13 @@ router.post('/', (req, res) => {
 
 router.get(
     '/',(req, res)=>{
-        pool.connect(function (err, client, done) {
+        pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
                 res.status(400).send({error:err});
             }
             var query = "select id_user, users.password, name from users where " +
                 "users.email = $1 fetch first 1 rows only;";
-            var hash = hashing.generate_hash_sync(req.body.password)
             var values = [req.body.email];
 
             client.query(query, values, function (err, result) {
@@ -97,10 +94,10 @@ router.get(
                 }
                 else{
                     if (hashing.compare_password_sync(req.body.password, result.rows[0].password)){
-                        res.cookie('id',result_01.rows[0].id_user, {httpOnly: true, signed:true });
+                        res.cookie('id',result.rows[0].id_user, {httpOnly: true, signed:true });
                         res.body.id = res.signedCookies.id;
                         res.body.email = req.body.email;
-                        res.body.name = result_01.rows[0].name;
+                        res.body.name = result.rows[0].name;
                         res.send(res.body);
                     }else{
                         res.status(400).send({error:'Invalid Password'});

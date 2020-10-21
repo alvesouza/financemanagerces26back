@@ -5,7 +5,7 @@ router.post('/', (req, res) => {
     var tag = req.body.tag;
     if(res.signedCookies.id != null){
         //Se conecta com o banco
-        pool.connect(function (err, client, done) {
+        pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
                 res.status(400).send({error: err});
@@ -13,7 +13,7 @@ router.post('/', (req, res) => {
                 var query = "insert into tags(id_user, tag) values ($1,$2)";
                 var values = [res.signedCookies.id, tag];
 
-                client.query(query, values, function (err, result) {
+                client.query(query, values, function (err/*, result*/) {
                     if (err) {
                         console.log(err);
                         res.status(400).send({error: err});
@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     var tag = req.body.tag;
     if(res.signedCookies.id != null){
         //Se conecta com o banco
-        pool.connect(function (err, client, done) {
+        pool.connect(function (err, client/*, done*/) {
             if (err) {
                 console.log(err);
                 res.status(400).send({error: err});
@@ -43,7 +43,7 @@ router.get('/', (req, res) => {
                         console.log(err);
                         res.status(400).send({error: err});
                     } else {
-                        res.send(true);
+                        res.send(200).send(result.rows);
                     }
                 });
             }
