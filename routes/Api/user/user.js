@@ -14,6 +14,7 @@ router.post('/', (req, res) => {
     body.id = 0;
     body.name = req.body.name;
     body.email = req.body.email;
+    res.body = {};
     // res.cookie('email',body.email, {httpOnly: true, secure: true});
     // body.cookies = req.cookies;
     console.log(body);
@@ -41,32 +42,35 @@ router.post('/', (req, res) => {
 
                         client.query(query, values, function (err, result_01){
                         console.log(result_01.rows);
-                        var transporter = nodemailer.createTransport({
-                            service: 'gmail',
-                            auth: {
-                                user: EMAIL,
-                                pass: PASSWORD
-                            }
-                        });
+                        if(result_01.rows[0].length != 0) {
+                            var transporter = nodemailer.createTransport({
+                                service: 'gmail',
+                                auth: {
+                                    user: EMAIL,
+                                    pass: PASSWORD
+                                }
+                            });
 
-                        var mailOptions = {
-                            from: EMAIL,
-                            to: body.email,
-                            subject: 'Confirm email',
-                            text: 'link: ' + result_01.rows[0].id_comfirm_route
-                        };
+                            var mailOptions = {
+                                from: EMAIL,
+                                to: body.email,
+                                subject: 'Confirm email',
+                                text: 'link: ' + result_01.rows[0].id_comfirm_route
+                            };
 
-                        transporter.sendMail(mailOptions, function(error/*, info*/){
-                            if (error) {
-                                console.log(/*error*/ 'erro');
-                            } else {
-                                console.log('Email sent: '/* + info.response*/);
-                            }
-                        });
-                        res.cookie('id',result_01.rows[0].id_user, {httpOnly: true, signed:true });
-                        res.body.id = result_01.rows[0].id_user;
-                        res.send(body);
-                        return;
+                            transporter.sendMail(mailOptions, function (error/*, info*/) {
+                                if (error) {
+                                    console.log(/*error*/ 'erro');
+                                    // res.send(body);
+                                } else {
+                                    console.log('Email sent: '/* + info.response*/);
+                                }
+                            });
+                            res.cookie('id', result_01.rows[0].id_user, {httpOnly: true, signed: true});
+                            body.id = result_01.rows[0].id_user;
+                            res.send(body);
+                            return;
+                        }
                     });
                 }
                 // res.json(result.rows[0]);
