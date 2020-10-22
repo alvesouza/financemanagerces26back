@@ -63,7 +63,11 @@ router.get('/', (req, res) => {
                         res.status(400);
                         return;
                     } else {
-                        res.status(200).send(result.rows);
+                        if(result.rows.length == 0){
+                            res.status(400).send("não achou tags");
+                        }else {
+                            res.status(200).send(result.rows);
+                        }
                         return;
                     }
                 });

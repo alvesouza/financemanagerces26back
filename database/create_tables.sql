@@ -194,7 +194,7 @@ create or replace VIEW expenses_tag_order_user_id AS
     order by id_user asc,
              id_expense asc;
 
-create or replace function change_expenses_tag_order_user_id_function() returns TRIGGER
+create or replace function create_expenses_tag_order_user_id_function() returns TRIGGER
     as
     $$
         declare
@@ -214,16 +214,54 @@ create or replace function change_expenses_tag_order_user_id_function() returns 
             if(new.paid is null) then
                 new.paid := false;
             end if;
-            insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, date, id_tag)
-                            values (new.id_user, new.description, new.value, new.paid, new.reminderCreated,
-                                                                            new.paid_day, new.date, id_tag_var);
+--             insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, date, id_tag)
+--                             values (new.id_user, new.description, new.value, new.paid, new.reminderCreated,
+--                                                                             new.paid_day, new.date, id_tag_var);
 
             return new;
         end;
     $$ language plpgsql;
 
-create trigger change_expenses_tag_order_user_id instead of insert or update on expenses_tag_order_user_id
- for each row execute procedure change_expenses_tag_order_user_id_function();
+create or replace function update_expenses_tag_order_user_id_function() returns TRIGGER
+    as
+    $$
+        declare
+            id_tag_var int;
+        begin
+            id_tag_var = (select tags_tag_view.id_tag from
+                        tags_tag_view where tags_tag_view.tag = new.tag
+                                and tags_tag_view.id_user = new.id_user fetch first 1 rows only);
+            if (id_tag_var is null) then
+                insert into tags_tag_view (id_tag,id_user, tag) values (default,new.id_user, new.tag)
+                returning id_tag into id_tag_var;
+
+--                 id_tag_var = (select tags_tag_view.id_tag from
+--                         tags_tag_view where tags_tag_view.tag = new.tag
+--                                 and tags_tag_view.id_user = new.id_user fetch first 1 rows only);
+            end if;
+            if(new.paid is null) then
+                new.paid := false;
+            end if;
+            update expenses
+                set id_user = new.id_user,
+                    description = new.description,
+                    value = new.value, paid = new.paid,
+                    reminderCreated = new.reminderCreated,
+                    paid_day = new.paid_day,
+                    date = new.date,
+                    id_tag = id_tag_var
+                where id_user = new.id_user and id_expense = new.id_expense;
+
+            return new;
+        end;
+    $$ language plpgsql;
+
+-- drop trigger create_expenses_tag_order_user_id on expenses_tag_order_user_id;
+create trigger create_expenses_tag_order_user_id instead of insert on expenses_tag_order_user_id
+ for each row execute procedure create_expenses_tag_order_user_id_function();
+
+create trigger update_expenses_tag_order_user_id instead of update on expenses_tag_order_user_id
+ for each row execute procedure update_expenses_tag_order_user_id_function();
 
 -- create or replace function before_expenses_tag_order_user_id_function() returns TRIGGER
 --     as
