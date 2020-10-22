@@ -113,27 +113,32 @@ router.post(
             var query = "select id_user, password, name from users where " +
                 "users.email = $1 fetch first 1 rows only;";
             var values = [req.body.email];
-
+            console.log(values);
             client.query(query, values, function (err, result) {
 
-                try {
-                    client.release();
-                }catch (e) {
-                    console.log(e);
-                }
                 if (err) {
                     console.log(err);
-
-                    res.status(400).send({error: err});
-                    return;
-                } else {
-
                     try {
                         client.release();
                     }catch (e) {
                         console.log(e);
                     }
+                    res.status(400).send({error: err});
+                    return;
+                } else {
+                    //
+                    // try {
+                    //     client.release();
+                    // }catch (e) {
+                    //     console.log(e);
+                    // }
+                    console.log(result.rows);
                     if (result.rows.length == 0) {
+                        try {
+                            client.release();
+                        }catch (e) {
+                            console.log(e);
+                        }
                         res.status(400).send("not a user")
                         return;
                     }
@@ -143,8 +148,18 @@ router.post(
                         res.body.token = result.rows[0].id_user;
                         res.body.email = req.body.email;
                         res.body.name = result.rows[0].name;
+                        try {
+                            client.release();
+                        }catch (e) {
+                            console.log(e);
+                        }
                         res.send(res.body);
                     } else {
+                        try {
+                            client.release();
+                        }catch (e) {
+                            console.log(e);
+                        }
                         res.status(400).send({error: 'Invalid Password'});
                         return;
                     }
