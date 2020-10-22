@@ -86,48 +86,48 @@ router.delete('/', (req, res) => {
     });
 });
 
-router.put('/',(req, res) => {
-    // var id = req.body.id;
-    // var tag = req.body.tag;
-    // var value = req.body.value;
-    // var description = req.body.description;
-    // var paid = req.body.paid;
-    // var reminderCreated = req.body.reminderCreated;
-
-    req.signedCookies.id = req.body.token;
-    pool.connect(function (err, client/*, done*/) {
-        if (err) {
-            console.log(err);
-            try {
-                client.release();
-            }catch (e) {
-                console.log(e);
-            }
-            res.status(400).send({error: err});
-            return;
-        } else {
-            var query = "insert into users(account_type, name, email, password) values ('S',$1,$2,$3)";
-            var values = [req.body.name, req.body.email, hashing.generate_hash_sync(req.body.password)];
-
-            client.query(query, values, function (err/*, result*/) {
-
-                try {
-                    client.release();
-                }catch (e) {
-                    console.log(e);
-                }
-                if (err) {
-                    console.log(err);
-                    res.status(400).send({error: err});
-                    return;
-                } else {
-                    res.status(200).send(true);
-                    return;
-                }
-            });
-        }
-    });
-});
+// router.put('/',(req, res) => {
+//     // var id = req.body.id;
+//     // var tag = req.body.tag;
+//     // var value = req.body.value;
+//     // var description = req.body.description;
+//     // var paid = req.body.paid;
+//     // var reminderCreated = req.body.reminderCreated;
+//
+//     req.signedCookies.id = req.body.token;
+//     pool.connect(function (err, client/*, done*/) {
+//         if (err) {
+//             console.log(err);
+//             try {
+//                 client.release();
+//             }catch (e) {
+//                 console.log(e);
+//             }
+//             res.status(400).send({error: err});
+//             return;
+//         } else {
+//             var query = "insert into users(account_type, name, email, password) values ('S',$1,$2,$3)";
+//             var values = [req.body.name, req.body.email, hashing.generate_hash_sync(req.body.password)];
+//
+//             client.query(query, values, function (err/*, result*/) {
+//
+//                 try {
+//                     client.release();
+//                 }catch (e) {
+//                     console.log(e);
+//                 }
+//                 if (err) {
+//                     console.log(err);
+//                     res.status(400).send({error: err});
+//                     return;
+//                 } else {
+//                     res.status(200).send(true);
+//                     return;
+//                 }
+//             });
+//         }
+//     });
+// });
 
 router.get('/', (req, res) => {
     console.log('req.cookies user is ', req.cookies);
@@ -138,6 +138,11 @@ router.get('/', (req, res) => {
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
             res.status(400).send({error: err});
             return;
         } else {

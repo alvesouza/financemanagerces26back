@@ -15,13 +15,13 @@ function calcTime(offset, option = {days:0}) {
 
 }
 router.get('/', (req, res) => {
-    // console.log('id user is ', req.cookies);
-    // console.log('id user is ', req.signedCookies);//Se conecta com o banco
+    console.log('id user is ', req.cookies);
+    console.log('id user is ', req.signedCookies);//Se conecta com o banco
     req.body = req.query;
     req.signedCookies.id = req.body.token;
 
-    // console.log('id user is ', req.cookies);
-    // console.log('id user is ', req.signedCookies);//Se conecta com o banco
+    console.log('id user is ', req.cookies);
+    console.log('id user is ', req.signedCookies);//Se conecta com o banco
     // console.log(d.getDate())
     // console.log(d.getMonth())
     // console.log(d.getFullYear())
