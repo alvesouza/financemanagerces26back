@@ -16,7 +16,8 @@ const cors = require('cors');
 
 // app.use(allowCrossDomain);
 // view engine setup
-app.options('*', cors())
+// app.options('*', cors())
+app.use(cors());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
@@ -30,7 +31,6 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 const translator = {remidercreated:"remiderCreated"};
 
 // set a cookie
-app.use(cors());
 app.use(function (req, res, next) {
   // if (req.query){
   //   req.body = req.query;
@@ -55,8 +55,8 @@ app.use(function (req, res, next) {
   //   res.setHeader('Access-Control-Allow-Origin', '*');
   // }
   //
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  // res.header("Access-Control-Allow-Origin", "*");
+  // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   // res.header("Access-Control-Allow-Origin", "*");
   // //Quais são os métodos que a conexão pode realizar na API
   // res.setHeader("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE,HEAD,OPTIONS');
