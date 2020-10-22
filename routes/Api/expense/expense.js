@@ -153,12 +153,13 @@ router.get('/', (req, res) => {
             for (const obKey in req.query) {
                 if(obKey.localeCompare('id') == 0){
                     query = query + ' and id_expense = $' + i;
+                    i += 1;
                     values.push(req.query[obKey])
                 }else if(obKey.localeCompare('token') != 0){
                     query = query + ' and ' + obKey + ' = $' + i;
                     values.push(req.query[obKey])
+                    i += 1;
                 }
-                i += 1;
             }
             console.log('query is :\n', query);
             client.query(query, values, function (err, result) {
