@@ -60,12 +60,8 @@ router.get('/', (req, res) => {
                     res.status(400).send({error: err});
                     return;
                 } else {
-                    console.log(result.rows);
-                    if(result.rows.length == 0){
-                        res.status(400).send("não achou despesa no periodo de tempo");
-                    }else {
-                        res.status(200).send(result.rows);
-                    }
+                    res.status(200).send(result.rows);
+
                     return;
                 }
             });
