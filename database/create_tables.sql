@@ -214,9 +214,9 @@ create or replace function create_expenses_tag_order_user_id_function() returns 
             if(new.paid is null) then
                 new.paid := false;
             end if;
---             insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, date, id_tag)
---                             values (new.id_user, new.description, new.value, new.paid, new.reminderCreated,
---                                                                             new.paid_day, new.date, id_tag_var);
+            insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, date, id_tag)
+                            values (new.id_user, new.description, new.value, new.paid, new.reminderCreated,
+                                                                            new.paid_day, new.date, id_tag_var);
 
             return new;
         end;

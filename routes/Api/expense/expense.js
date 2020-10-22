@@ -51,7 +51,8 @@ router.post('/', (req, res) => {
     // res.send(true);
 });
 
-router.delete('/', (req, res) => {
+router.delete('/:id', (req, res) => {
+    const id = req.params.id;
     req.signedCookies.id = req.body.token;
     console.log('req.body delete ====>',req.body);
     console.log('req.query delete ====>',req.query);
@@ -67,8 +68,9 @@ router.delete('/', (req, res) => {
             res.status(400).send({error: err});
             return;
         } else {
-            var query = "delete from expenses where id_expense = $1 and id_user = $2";
-            var values = [req.body.id, req.signedCookies.id];
+            var query = "delete from expenses where id_expense = $1";
+            // var values = [req.body.id, req.signedCookies.id];
+            var values = [id];
             console.log('delete query is ', query);
             console.log('delete values is ', values);
             client.query(query, values, function (err, result) {

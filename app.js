@@ -35,6 +35,7 @@ app.use(function (req, res, next) {
   // if (req.query){
   //   req.body = req.query;
   // }
+  // app.defaults.headers.delete = { "Content-Type": "application/json;charset=utf-8" };
   if(req.query["remindercreated"]){
     req.body["remindercreated"] = req.query["remindercreated"]
   }
@@ -79,7 +80,15 @@ app.use(function (req, res, next) {
   next(); // <-- important!
 });
 
-
+// app.delete('/deletateste/:id/:oi',function (req, res){
+//   const id = req.params.id;
+//   const oi = req.params.oi;
+//   console.log('id eh ', id);
+//   console.log('oi eh ', oi);
+//   console.log('params eh', req.params);
+//   res.status(200).send({ab:"good job " + id});
+//
+// });
 
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
