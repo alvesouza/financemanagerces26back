@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
     req.body = req.query;
-    req.signedCookies.id = req.body.token;
+    req.signedCookies.id = parseInt(req.body.token);
 
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
@@ -37,7 +37,7 @@ router.get('/', (req, res) => {
             }catch (e) {
                 console.log(e);
             }
-            res.status(400).send({error: err});
+            res.status(500).send({error: err});
             return;
         } else {
 

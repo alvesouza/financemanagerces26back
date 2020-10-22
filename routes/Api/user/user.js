@@ -23,7 +23,12 @@ router.post('/', (req, res) => {
     pool.connect(function (err, client) {
         if (err) {
             console.log(err);
-            res.status(400).send({error:err});
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
+            res.status(500).send({error:err});
             return;
         }
         else {
@@ -97,7 +102,7 @@ router.post(
     '/login',(req, res)=>{
         res.body = {}
 
-        req.signedCookies.id = req.body.token;
+        req.signedCookies.id = parseInt(req.body.token);
 
         pool.connect(function (err, client/*, done*/) {
             if (err) {
@@ -142,24 +147,25 @@ router.post(
                         res.status(400).send("not a user")
                         return;
                     }
+                    try {
+                        client.release();
+                    }catch (e) {
+                        console.log(e);
+                    }
                     console.log(result.rows[0])
                     if (hashing.compare_password_sync(req.body.password, result.rows[0].password)) {
                         res.cookie('id', result.rows[0].id_user, {httpOnly: true, signed: true});
                         res.body.token = result.rows[0].id_user;
                         res.body.email = req.body.email;
                         res.body.name = result.rows[0].name;
-                        try {
-                            client.release();
-                        }catch (e) {
-                            console.log(e);
-                        }
+
                         res.send(res.body);
                     } else {
-                        try {
-                            client.release();
-                        }catch (e) {
-                            console.log(e);
-                        }
+                        // try {
+                        //     client.release();
+                        // }catch (e) {
+                        //     console.log(e);
+                        // }
                         res.status(400).send({error: 'Invalid Password'});
                         return;
                     }

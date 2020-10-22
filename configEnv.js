@@ -8,13 +8,13 @@ module.exports = {
         '2803f759651acb00ca874@ec2-34-202-65-210.compute-1.amazonaws.com:5432/dd9p8pp2k0skrh',
     pool: {
       min: 0,
-      max: 1
+      max: 3
     },
     migrations: {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
-    idleTime:500,
+    idleTime:1000,
     email:{
       email: "managerfinance.ces26@gmail.com",
       password: "byt6%&*uig9HKhuf6DDCctfj9"

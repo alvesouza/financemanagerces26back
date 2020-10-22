@@ -5,7 +5,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
     console.log('id user is ', req.cookies);
     console.log('id user is ', req.signedCookies);//Se conecta com o banco
-    req.signedCookies.id = req.body.token;
+    req.signedCookies.id = parseInt(req.body.token);
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -103,7 +103,7 @@ router.put('/',(req, res) => {
     // var paid = req.body.paid;
     // var reminderCreated = req.body.reminderCreated;
 
-    req.signedCookies.id = req.body.token;
+    req.signedCookies.id = parseInt(req.body.token);
     pool.connect(function (err, client/*, done*/) {
         console.log('query ', req.query);
         console.log('body ', req.body);
@@ -139,7 +139,8 @@ router.put('/',(req, res) => {
             query = query + ' where id_user = $' + (i)+ ' and '+ ' id_expense = $' + (i+1);
             values.push(req.signedCookies.id)
             values.push(req.body.id_expense)
-            console.log('query out is ',query)
+            console.log('query put is ',query);
+            console.log('values put is ', values);
             client.query(query, values, function (err/*, result*/) {
 
                 try {
