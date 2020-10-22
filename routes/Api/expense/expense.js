@@ -98,6 +98,11 @@ router.put('/',(req, res) => {
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
             res.status(400).send({error: err});
             return;
         } else {

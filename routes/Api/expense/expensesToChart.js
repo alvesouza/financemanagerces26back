@@ -32,6 +32,11 @@ router.get('/', (req, res) => {
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
             res.status(400).send({error: err});
             return;
         } else {
@@ -44,22 +49,23 @@ router.get('/', (req, res) => {
 
             // console.log('///////////////////////////\n',query);
             client.query(query, values, function (err, result) {
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
                 if (err) {
                     console.log(err);
-                    try {
-                        client.release();
-                    }catch (e) {
-                        console.log(e);
-                    }
+
                     res.status(400).send({error: err});
                     return;
                 } else {
                     console.log(result.rows);
-                    try {
-                        client.release();
-                    }catch (e) {
-                        console.log(e);
-                    }
+                    // try {
+                    //     client.release();
+                    // }catch (e) {
+                    //     console.log(e);
+                    // }
                     res.status(200).send(result.rows);
                     return;
                 }

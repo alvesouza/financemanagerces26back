@@ -51,36 +51,36 @@ router.post('/', (req, res) => {
                             }catch (e) {
                                 console.log(e);
                             }
-                        console.log(result_01.rows);
-                        if(result_01.rows[0].length != 0) {
-                            var transporter = nodemailer.createTransport({
-                                service: 'gmail',
-                                auth: {
-                                    user: EMAIL,
-                                    pass: PASSWORD
-                                }
-                            });
+                            console.log(result_01.rows);
+                            if(result_01.rows[0].length != 0) {
+                                var transporter = nodemailer.createTransport({
+                                    service: 'gmail',
+                                    auth: {
+                                        user: EMAIL,
+                                        pass: PASSWORD
+                                    }
+                                });
 
-                            var mailOptions = {
-                                from: EMAIL,
-                                to: body.email,
-                                subject: 'Confirm email',
-                                text: 'link: ' + result_01.rows[0].id_comfirm_route
-                            };
+                                var mailOptions = {
+                                    from: EMAIL,
+                                    to: body.email,
+                                    subject: 'Confirm email',
+                                    text: 'link: ' + result_01.rows[0].id_comfirm_route
+                                };
 
-                            transporter.sendMail(mailOptions, function (error/*, info*/) {
-                                if (error) {
-                                    console.log(/*error*/ 'erro');
-                                    // res.send(body);
-                                } else {
-                                    console.log('Email sent: '/* + info.response*/);
-                                }
-                            });
-                            res.cookie('id', result_01.rows[0].id_user, {httpOnly: true, signed: true});
-                            body.token = result_01.rows[0].id_user;
-                            res.send(body);
-                            return;
-                        }
+                                transporter.sendMail(mailOptions, function (error/*, info*/) {
+                                    if (error) {
+                                        console.log(/*error*/ 'erro');
+                                        // res.send(body);
+                                    } else {
+                                        console.log('Email sent: '/* + info.response*/);
+                                    }
+                                });
+                                res.cookie('id', result_01.rows[0].id_user, {httpOnly: true, signed: true});
+                                body.token = result_01.rows[0].id_user;
+                                res.send(body);
+                                return;
+                            }
                     });
                 }
                 // res.json(result.rows[0]);
