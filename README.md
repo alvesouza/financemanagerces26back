@@ -20,7 +20,11 @@ A integração com o FRONT-END foi feito por trocas de mensagens HTTP, se utiliz
 A requisições foram desenhadas na lista TO-DO no [link](https://github.com/bambokianr/finance-manager-front/issues/6), com uma pequena série de modificações.
 
 ## :computer: Database:
+  Código para gerar o banco[link](https://github.com/alvesouza/financemanagerces26back/blob/main/database/create_tables.sql)
   Foi utilizado o postgresql integrado ao Heroku, modelado com base do diagrama abaixo:
   ![alt text](https://drive.google.com/uc?export=view&id=1EORagX7qKw-QFL_G03XfFXgJlwfLVXjz)
   
-### :
+### :Views e índices:
+  No banco de dados, Views foram utilizadas, juntas de Indices para a melhora da eficiência do programa, como um left join para relacionar as "expenses" junto com as "tags", utilizando o indices em hash na tabela "tags", arvores binárias.
+
+ 
