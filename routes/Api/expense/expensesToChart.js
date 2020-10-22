@@ -61,12 +61,11 @@ router.get('/', (req, res) => {
                     return;
                 } else {
                     console.log(result.rows);
-                    // try {
-                    //     client.release();
-                    // }catch (e) {
-                    //     console.log(e);
-                    // }
-                    res.status(200).send(result.rows);
+                    if(result.rows.length == 0){
+                        res.status(400).send("não achou despesa no periodo de tempo");
+                    }else {
+                        res.status(200).send(result.rows);
+                    }
                     return;
                 }
             });
