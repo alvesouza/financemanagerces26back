@@ -27,11 +27,16 @@ app.use(cookieParser('cwe$Fdew3!QWSWQCTYTH764qwd@!'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
+const translator = {remidercreated:"remiderCreated"};
 
 // set a cookie
 app.use(cors());
 app.use(function (req, res, next) {
+  if (req.query){
+    req.body = req.query;
+  }
+  req.body["reminderCreated"] = req.body["remindercreated"]
+  console.log(req.body);
   // check if client sent cookie
   // var cookie = req.cookies.cookieName;
   // const allowedOrigins = ['http://127.0.0.1:8020', 'http://localhost:8020', 'http://127.0.0.1:9000', 'http://localhost:9000'];
