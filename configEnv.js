@@ -49,7 +49,7 @@ module.exports = {
       tableName: 'knex_migrations',
       directory:'./migrations'
     },
-    idleTime:process.CONECTION_IDLE_TIME,
+    idleTime:process.env.CONNECTION_IDLE_TIME,
     email:{
       email: process.env.EMAIL_LOGIN,
       password: process.env.EMAIL_PASSWORD
