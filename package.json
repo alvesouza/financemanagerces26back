@@ -25,7 +25,8 @@
     "path": "^0.12.7",
     "pg": "^8.4.1",
     "pg-format": "^1.0.4",
-    "sqlite3": "^5.0.0"
+    "sqlite3": "^5.0.0",
+    "yarm": "^0.4.0"
   },
   "scripts": {
     "start": "node app.js",

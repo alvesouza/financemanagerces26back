@@ -30,11 +30,8 @@
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/configEnv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/insert_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Api/expense/expense.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expense.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +48,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="cookies" />
+        <entry key="$PROJECT_DIR$" value="manutencao_deply_front_main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -95,62 +92,6 @@
       <updated>1603179654506</updated>
       <workItem from="1603179655556" duration="14713000" />
       <workItem from="1603224392182" duration="4368000" />
-    </task>
-    <task id="LOCAL-00001" summary="changind repo, and add to heroku">
-      <created>1603180906600</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1603180906600</updated>
-    </task>
-    <task id="LOCAL-00002" summary="run deploy">
-      <created>1603181619601</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1603181619601</updated>
-    </task>
-    <task id="LOCAL-00003" summary="run deploy">
-      <created>1603182292292</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1603182292292</updated>
-    </task>
-    <task id="LOCAL-00004" summary="envio de email">
-      <created>1603195423731</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1603195423731</updated>
-    </task>
-    <task id="LOCAL-00005" summary="banco de dados, falta integração com o back, views e indexes">
-      <created>1603207637094</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1603207637095</updated>
-    </task>
-    <task id="LOCAL-00006" summary="inicio de uso de cookies">
-      <created>1603214389185</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1603214389185</updated>
-    </task>
-    <task id="LOCAL-00007" summary="banco finalizado, falta views e indexes">
-      <created>1603217382929</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1603217382929</updated>
-    </task>
-    <task id="LOCAL-00008" summary="para a integração com o banco falta, as rotas dos expenses">
-      <created>1603234124748</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1603234124748</updated>
     </task>
     <task id="LOCAL-00009" summary="termino da integracao com o banco, falta debugar">
       <created>1603283839392</created>
@@ -383,7 +324,119 @@
       <option name="project" value="LOCAL" />
       <updated>1603324304985</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="conserta tempo de idle das conexões">
+      <created>1603326647225</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1603326647225</updated>
+    </task>
+    <task id="LOCAL-00043" summary="conserta tempo de idle das conexões">
+      <created>1603326686913</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1603326686913</updated>
+    </task>
+    <task id="LOCAL-00044" summary="alteração nas comfigurações">
+      <created>1603329675537</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1603329675537</updated>
+    </task>
+    <task id="LOCAL-00045" summary="fecha conexões em mais alguns lugares de saida">
+      <created>1603330111595</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1603330111595</updated>
+    </task>
+    <task id="LOCAL-00046" summary="fecha conexões e reduz o tempo do hashing">
+      <created>1603332396392</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332396392</updated>
+    </task>
+    <task id="LOCAL-00047" summary="conserto do indice">
+      <created>1603332651678</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332651678</updated>
+    </task>
+    <task id="LOCAL-00048" summary="01">
+      <created>1603332663122</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1603332663122</updated>
+    </task>
+    <task id="LOCAL-00049" summary="01">
+      <created>1603333529346</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1603333529346</updated>
+    </task>
+    <task id="LOCAL-00050" summary="01">
+      <created>1603333634213</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1603333634213</updated>
+    </task>
+    <task id="LOCAL-00051" summary="cors">
+      <created>1603335379207</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1603335379207</updated>
+    </task>
+    <task id="LOCAL-00052" summary="tradução">
+      <created>1603338492050</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1603338492050</updated>
+    </task>
+    <task id="LOCAL-00053" summary="tradução">
+      <created>1603338607300</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1603338607300</updated>
+    </task>
+    <task id="LOCAL-00054" summary="correção de bugs">
+      <created>1603344902255</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1603344902255</updated>
+    </task>
+    <task id="LOCAL-00055" summary="retorno de string confirmando que as colunas estão vazias">
+      <created>1603347670599</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1603347670599</updated>
+    </task>
+    <task id="LOCAL-00056" summary="conserta cors(https://www.youtube.com/watch?v=-j7vLmBMsEU),talvez...">
+      <created>1603350374896</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1603350374896</updated>
+    </task>
+    <task id="LOCAL-00057" summary="conserta cors(https://www.youtube.com/watch?v=-j7vLmBMsEU),talvez...">
+      <created>1603350388444</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1603350388444</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,17 +472,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="termino da integracao com o banco, falta debugar" />
-    <MESSAGE value="finalização dos testes" />
-    <MESSAGE value="knexfile, para escolha de variaveis de ambiente" />
-    <MESSAGE value="configurado para atender variaveis de ambiente do heroku ou da maquina, assim garate maior potreção dos dados" />
-    <MESSAGE value="libera cors e criação de indexes(banco de dados)" />
-    <MESSAGE value="conserta cors" />
-    <MESSAGE value="eliminando rotas padrões" />
-    <MESSAGE value="req app user" />
-    <MESSAGE value="reconfiguração do numero de conexões" />
-    <MESSAGE value="consert o get" />
-    <MESSAGE value="allow cors" />
     <MESSAGE value="test" />
     <MESSAGE value="idle time" />
     <MESSAGE value="allow every origin" />
@@ -437,14 +479,25 @@
     <MESSAGE value="query" />
     <MESSAGE value="troquei id por token" />
     <MESSAGE value="retira headers de cookie" />
-    <MESSAGE value="01" />
     <MESSAGE value="/expensestochart recebe apenas token" />
     <MESSAGE value="configuração das pool para o remoto" />
     <MESSAGE value="fecha conexões" />
     <MESSAGE value="fecha conexões, problema com o cors" />
     <MESSAGE value="fecha todas conexoes com try" />
     <MESSAGE value="conserta a presença do token na query" />
-    <option name="LAST_COMMIT_MESSAGE" value="conserta a presença do token na query" />
+    <MESSAGE value="conserta tempo de idle das conexões" />
+    <MESSAGE value="alteração nas comfigurações" />
+    <MESSAGE value="fecha conexões em mais alguns lugares de saida" />
+    <MESSAGE value="fecha conexões e reduz o tempo do hashing" />
+    <MESSAGE value="conserto do indice" />
+    <MESSAGE value="01" />
+    <MESSAGE value="cors" />
+    <MESSAGE value="reminderCreated =&gt; remindercreated" />
+    <MESSAGE value="tradução" />
+    <MESSAGE value="correção de bugs" />
+    <MESSAGE value="retorno de string confirmando que as colunas estão vazias" />
+    <MESSAGE value="conserta cors(https://www.youtube.com/watch?v=-j7vLmBMsEU),talvez..." />
+    <option name="LAST_COMMIT_MESSAGE" value="conserta cors(https://www.youtube.com/watch?v=-j7vLmBMsEU),talvez..." />
   </component>
   <component name="WindowStateProjectService">
     <state x="2226" y="213" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603291797141">
@@ -455,37 +508,53 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2619" y="356" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603181522909" />
-    <state width="1240" height="265" key="GridCell.Tab.0.bottom" timestamp="1603326515531">
+    <state x="2092" y="129" width="1648" height="851" key="DiffContextDialog" timestamp="1603351014123">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
-    <state width="1240" height="265" key="GridCell.Tab.0.center" timestamp="1603326515531">
+    <state x="2092" y="129" width="1648" height="851" key="DiffContextDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603351014123" />
+    <state width="1240" height="261" key="GridCell.Tab.0.bottom" timestamp="1603344071039">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
-    <state width="1240" height="265" key="GridCell.Tab.0.left" timestamp="1603326515531">
+    <state width="1291" height="261" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603339652074" />
+    <state width="1240" height="261" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603344071039" />
+    <state width="1240" height="261" key="GridCell.Tab.0.center" timestamp="1603344071039">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
-    <state width="1240" height="265" key="GridCell.Tab.0.right" timestamp="1603326515531">
+    <state width="1291" height="261" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603339652074" />
+    <state width="1240" height="261" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603344071039" />
+    <state width="1240" height="261" key="GridCell.Tab.0.left" timestamp="1603344071039">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
+    <state width="1291" height="261" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603339652074" />
+    <state width="1240" height="261" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603344071039" />
+    <state width="1240" height="261" key="GridCell.Tab.0.right" timestamp="1603344071039">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1291" height="261" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603339652074" />
+    <state width="1240" height="261" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603344071039" />
+    <state x="2138" y="111" width="1536" height="901" key="MergeDialog" timestamp="1603350555141">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2138" y="111" width="1536" height="901" key="MergeDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603350555141" />
+    <state x="2547" y="317" width="728" height="482" key="MultipleFileMergeDialog" timestamp="1603350555143">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2547" y="317" width="728" height="482" key="MultipleFileMergeDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603350555143" />
     <state x="2617" y="238" width="587" height="640" key="RollbackChangesDialog" timestamp="1603309882694">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2617" y="238" width="587" height="640" key="RollbackChangesDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603309882694" />
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603323898277">
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603350653038">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603323898277" />
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603350653038" />
     <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603296987243">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603296987243" />
+    <state x="2209" y="282" width="1149" height="718" key="dock-window-1" timestamp="1603344431568">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2209" y="282" width="1149" height="718" key="dock-window-1/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603344431568" />
   </component>
 </project>

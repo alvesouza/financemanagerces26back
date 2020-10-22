@@ -4245,7 +4245,7 @@ true posixrules
     <database id="710" parent="1" name="dd9p8pp2k0skrh">
       <ObjectId>393372</ObjectId>
       <Owner>xzdyuyszpnfeob</Owner>
-      <IntrospectionStateNumber>159590</IntrospectionStateNumber>
+      <IntrospectionStateNumber>176819</IntrospectionStateNumber>
       <Current>1</Current>
       <Relations>sequence|table|393615|393617|1
 sequence|table|393626|393630|1
@@ -9553,7 +9553,7 @@ sequence|table|393650|393652|2
       <Comment>standard public schema</Comment>
       <StateNumber>120878</StateNumber>
       <Owner>xzdyuyszpnfeob</Owner>
-      <IntrospectionStateNumber>159591</IntrospectionStateNumber>
+      <IntrospectionStateNumber>176820</IntrospectionStateNumber>
       <Current>1</Current>
     </schema>
     <access-method id="1811" parent="710" name="heap">
@@ -9672,7 +9672,7 @@ sequence|table|393650|393652|2
       <ObjectId>427748</ObjectId>
       <SourceTextLength>318</SourceTextLength>
       <Owner>xzdyuyszpnfeob</Owner>
-      <StateNumber>159422</StateNumber>
+      <StateNumber>160996</StateNumber>
     </view>
     <view id="1832" parent="1810" name="tags_tag_view">
       <ObjectId>393644</ObjectId>
@@ -9694,8 +9694,8 @@ sequence|table|393650|393652|2
     <routine id="1834" parent="1810" name="change_expenses_tag_order_user_id_function">
       <ObjectId>393474</ObjectId>
       <Owner>xzdyuyszpnfeob</Owner>
-      <SourceTextLength>1209</SourceTextLength>
-      <StateNumber>159589</StateNumber>
+      <SourceTextLength>1218</SourceTextLength>
+      <StateNumber>175990</StateNumber>
       <VolatilityKind>volatile</VolatilityKind>
       <ResultsDefinition>trigger</ResultsDefinition>
       <LanguageName>plpgsql</LanguageName>
@@ -9713,7 +9713,18 @@ sequence|table|393650|393652|2
       <RoutineKind>function</RoutineKind>
       <Rows>0.0</Rows>
     </routine>
-    <routine id="1836" parent="1810" name="create_id_validation">
+    <routine id="1836" parent="1810" name="create_expenses_tag_order_user_id_function">
+      <ObjectId>427936</ObjectId>
+      <Owner>xzdyuyszpnfeob</Owner>
+      <SourceTextLength>1218</SourceTextLength>
+      <StateNumber>176815</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Rows>0.0</Rows>
+    </routine>
+    <routine id="1837" parent="1810" name="create_id_validation">
       <ObjectId>393476</ObjectId>
       <Owner>xzdyuyszpnfeob</Owner>
       <SourceTextLength>1428</SourceTextLength>
@@ -9725,7 +9736,7 @@ sequence|table|393650|393652|2
       <RoutineKind>function</RoutineKind>
       <Rows>0.0</Rows>
     </routine>
-    <routine id="1837" parent="1810" name="generate_string">
+    <routine id="1838" parent="1810" name="generate_string">
       <ObjectId>393477</ObjectId>
       <Owner>xzdyuyszpnfeob</Owner>
       <SourceTextLength>580</SourceTextLength>
@@ -9737,7 +9748,18 @@ sequence|table|393650|393652|2
       <RoutineKind>function</RoutineKind>
       <Rows>0.0</Rows>
     </routine>
-    <column id="1838" parent="1828" name="id_expense">
+    <routine id="1839" parent="1810" name="update_expenses_tag_order_user_id_function">
+      <ObjectId>427937</ObjectId>
+      <Owner>xzdyuyszpnfeob</Owner>
+      <SourceTextLength>1315</SourceTextLength>
+      <StateNumber>176816</StateNumber>
+      <VolatilityKind>volatile</VolatilityKind>
+      <ResultsDefinition>trigger</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Rows>0.0</Rows>
+    </routine>
+    <column id="1840" parent="1828" name="id_expense">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -9745,7 +9767,7 @@ sequence|table|393650|393652|2
       <DefaultExpression>nextval(&apos;expenses_id_expense_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1839" parent="1828" name="id_user">
+    <column id="1841" parent="1828" name="id_user">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -9753,19 +9775,19 @@ sequence|table|393650|393652|2
       <DefaultExpression>nextval(&apos;expenses_id_user_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1840" parent="1828" name="description">
+    <column id="1842" parent="1828" name="description">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <StateNumber>128109</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1841" parent="1828" name="id_tag">
+    <column id="1843" parent="1828" name="id_tag">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>128109</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="1842" parent="1828" name="paid">
+    <column id="1844" parent="1828" name="paid">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <NotNull>1</NotNull>
@@ -9773,57 +9795,57 @@ sequence|table|393650|393652|2
       <DefaultExpression>false</DefaultExpression>
       <TypeId>16</TypeId>
     </column>
-    <column id="1843" parent="1828" name="value">
+    <column id="1845" parent="1828" name="value">
       <Position>6</Position>
       <DataType>real|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>128109</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="1844" parent="1828" name="remindercreated">
+    <column id="1846" parent="1828" name="remindercreated">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <StateNumber>128109</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="1845" parent="1828" name="paid_day">
+    <column id="1847" parent="1828" name="paid_day">
       <Position>8</Position>
       <DataType>date|0s</DataType>
       <StateNumber>128109</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="1846" parent="1828" name="new_column_name">
+    <column id="1848" parent="1828" name="new_column_name">
       <Position>9</Position>
       <DataType>date|0s</DataType>
       <StateNumber>159406</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <column id="1847" parent="1828" name="date">
+    <column id="1849" parent="1828" name="date">
       <Position>10</Position>
       <DataType>date|0s</DataType>
       <StateNumber>159413</StateNumber>
       <TypeId>1082</TypeId>
     </column>
-    <index id="1848" parent="1828" name="expenses_pkey">
+    <index id="1850" parent="1828" name="expenses_pkey">
       <ObjectId>393658</ObjectId>
       <StateNumber>128109</StateNumber>
       <ColNames>id_expense</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="1849" parent="1828" name="expenses_date_idx">
+    <index id="1851" parent="1828" name="expenses_date_idx">
       <ObjectId>427747</ObjectId>
       <StateNumber>159415</StateNumber>
       <ColNames>date</ColNames>
     </index>
-    <key id="1850" parent="1828" name="expenses_pkey">
+    <key id="1852" parent="1828" name="expenses_pkey">
       <ObjectId>393659</ObjectId>
       <StateNumber>128109</StateNumber>
       <ColNames>id_expense</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>expenses_pkey</UnderlyingIndexName>
     </key>
-    <foreign-key id="1851" parent="1828" name="id_user">
+    <foreign-key id="1853" parent="1828" name="id_user">
       <ObjectId>393660</ObjectId>
       <StateNumber>128109</StateNumber>
       <ColNames>id_user</ColNames>
@@ -9835,7 +9857,7 @@ sequence|table|393650|393652|2
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="1852" parent="1829" name="id_tag">
+    <column id="1854" parent="1829" name="id_tag">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -9843,7 +9865,7 @@ sequence|table|393650|393652|2
       <DefaultExpression>nextval(&apos;tags_id_tag_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1853" parent="1829" name="id_user">
+    <column id="1855" parent="1829" name="id_user">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -9851,52 +9873,52 @@ sequence|table|393650|393652|2
       <DefaultExpression>nextval(&apos;tags_id_user_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1854" parent="1829" name="tag">
+    <column id="1856" parent="1829" name="tag">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>128106</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="1855" parent="1829" name="tags_pkey">
+    <index id="1857" parent="1829" name="tags_pkey">
       <ObjectId>393635</ObjectId>
       <StateNumber>128106</StateNumber>
       <ColNames>id_tag</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="1856" parent="1829" name="tags_id_user_tag_key">
+    <index id="1858" parent="1829" name="tags_id_user_tag_key">
       <ObjectId>393637</ObjectId>
       <StateNumber>128106</StateNumber>
       <ColNames>id_user
 tag</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="1857" parent="1829" name="tags_user_idx">
+    <index id="1859" parent="1829" name="tags_user_idx">
       <ObjectId>393704</ObjectId>
       <StateNumber>129328</StateNumber>
       <ColNames>id_user</ColNames>
     </index>
-    <index id="1858" parent="1829" name="tags_tag_idx">
+    <index id="1860" parent="1829" name="tags_tag_idx">
       <ObjectId>393703</ObjectId>
       <StateNumber>129324</StateNumber>
       <ColNames>tag</ColNames>
     </index>
-    <key id="1859" parent="1829" name="tags_pkey">
+    <key id="1861" parent="1829" name="tags_pkey">
       <ObjectId>393636</ObjectId>
       <StateNumber>128106</StateNumber>
       <ColNames>id_tag</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>tags_pkey</UnderlyingIndexName>
     </key>
-    <key id="1860" parent="1829" name="tags_id_user_tag_key">
+    <key id="1862" parent="1829" name="tags_id_user_tag_key">
       <ObjectId>393638</ObjectId>
       <StateNumber>128106</StateNumber>
       <ColNames>id_user
 tag</ColNames>
       <UnderlyingIndexName>tags_id_user_tag_key</UnderlyingIndexName>
     </key>
-    <foreign-key id="1861" parent="1829" name="id_user">
+    <foreign-key id="1863" parent="1829" name="id_user">
       <ObjectId>393639</ObjectId>
       <StateNumber>128106</StateNumber>
       <ColNames>id_user</ColNames>
@@ -9908,7 +9930,7 @@ tag</ColNames>
       <OnDelete>cascade</OnDelete>
       <OnUpdate>cascade</OnUpdate>
     </foreign-key>
-    <column id="1862" parent="1830" name="id_user">
+    <column id="1864" parent="1830" name="id_user">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
@@ -9916,72 +9938,72 @@ tag</ColNames>
       <DefaultExpression>nextval(&apos;users_id_user_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="1863" parent="1830" name="password">
+    <column id="1865" parent="1830" name="password">
       <Position>2</Position>
       <DataType>varchar(80)|0s</DataType>
       <StateNumber>128102</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1864" parent="1830" name="account_type">
+    <column id="1866" parent="1830" name="account_type">
       <Position>3</Position>
       <DataType>char|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>128102</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="1865" parent="1830" name="name">
+    <column id="1867" parent="1830" name="name">
       <Position>4</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>128102</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1866" parent="1830" name="email">
+    <column id="1868" parent="1830" name="email">
       <Position>5</Position>
       <DataType>varchar(40)|0s</DataType>
       <NotNull>1</NotNull>
       <StateNumber>128102</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <column id="1867" parent="1830" name="status">
+    <column id="1869" parent="1830" name="status">
       <Position>6</Position>
       <DataType>char|0s</DataType>
       <StateNumber>128102</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="1868" parent="1830" name="id_comfirm_route">
+    <column id="1870" parent="1830" name="id_comfirm_route">
       <Position>7</Position>
       <DataType>varchar(10)|0s</DataType>
       <StateNumber>128102</StateNumber>
       <TypeId>1043</TypeId>
     </column>
-    <index id="1869" parent="1830" name="users_pkey">
+    <index id="1871" parent="1830" name="users_pkey">
       <ObjectId>393621</ObjectId>
       <StateNumber>128102</StateNumber>
       <ColNames>id_user</ColNames>
       <Unique>1</Unique>
       <Primary>1</Primary>
     </index>
-    <index id="1870" parent="1830" name="users_email_key">
+    <index id="1872" parent="1830" name="users_email_key">
       <ObjectId>393623</ObjectId>
       <StateNumber>128102</StateNumber>
       <ColNames>email</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="1871" parent="1830" name="users_pkey">
+    <key id="1873" parent="1830" name="users_pkey">
       <ObjectId>393622</ObjectId>
       <StateNumber>128102</StateNumber>
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>
       <UnderlyingIndexName>users_pkey</UnderlyingIndexName>
     </key>
-    <key id="1872" parent="1830" name="users_email_key">
+    <key id="1874" parent="1830" name="users_email_key">
       <ObjectId>393624</ObjectId>
       <StateNumber>128102</StateNumber>
       <ColNames>email</ColNames>
       <UnderlyingIndexName>users_email_key</UnderlyingIndexName>
     </key>
-    <trigger id="1873" parent="1830" name="register_user">
+    <trigger id="1875" parent="1830" name="register_user">
       <ObjectId>393625</ObjectId>
       <StateNumber>128104</StateNumber>
       <Turn>before-row</Turn>
@@ -9989,99 +10011,123 @@ tag</ColNames>
       <FireMode>origin</FireMode>
       <CallRoutineId>393475</CallRoutineId>
     </trigger>
-    <column id="1874" parent="1831" name="id_user">
+    <column id="1876" parent="1831" name="id_user">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1875" parent="1831" name="id_expense">
+    <column id="1877" parent="1831" name="id_expense">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1876" parent="1831" name="tag">
+    <column id="1878" parent="1831" name="tag">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1877" parent="1831" name="description">
+    <column id="1879" parent="1831" name="description">
       <Position>4</Position>
       <DataType>varchar(50)|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1878" parent="1831" name="paid">
+    <column id="1880" parent="1831" name="paid">
       <Position>5</Position>
       <DataType>boolean|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1879" parent="1831" name="value">
+    <column id="1881" parent="1831" name="value">
       <Position>6</Position>
       <DataType>real|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1880" parent="1831" name="date">
+    <column id="1882" parent="1831" name="date">
       <Position>7</Position>
       <DataType>date|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1881" parent="1831" name="remindercreated">
+    <column id="1883" parent="1831" name="remindercreated">
       <Position>8</Position>
       <DataType>date|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1882" parent="1831" name="paid_day">
+    <column id="1884" parent="1831" name="paid_day">
       <Position>9</Position>
       <DataType>date|0s</DataType>
       <StateNumber>159422</StateNumber>
     </column>
-    <column id="1883" parent="1832" name="id_tag">
+    <trigger id="1885" parent="1831" name="create_expenses_tag_order_user_id">
+      <ObjectId>427938</ObjectId>
+      <StateNumber>176817</StateNumber>
+      <Turn>after-row</Turn>
+      <Events>I</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>427936</CallRoutineId>
+    </trigger>
+    <trigger id="1886" parent="1831" name="update_expenses_tag_order_user_id">
+      <ObjectId>427939</ObjectId>
+      <StateNumber>176818</StateNumber>
+      <Turn>after-row</Turn>
+      <Events>U</Events>
+      <FireMode>origin</FireMode>
+      <CallRoutineId>427937</CallRoutineId>
+    </trigger>
+    <column id="1887" parent="1832" name="id_tag">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>128108</StateNumber>
     </column>
-    <column id="1884" parent="1832" name="id_user">
+    <column id="1888" parent="1832" name="id_user">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <StateNumber>128108</StateNumber>
     </column>
-    <column id="1885" parent="1832" name="tag">
+    <column id="1889" parent="1832" name="tag">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <StateNumber>128108</StateNumber>
     </column>
-    <argument id="1886" parent="1833">
+    <argument id="1890" parent="1833">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>trigger|0s</DataType>
     </argument>
-    <argument id="1887" parent="1834">
+    <argument id="1891" parent="1834">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>trigger|0s</DataType>
     </argument>
-    <argument id="1888" parent="1835">
+    <argument id="1892" parent="1835">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>trigger|0s</DataType>
     </argument>
-    <argument id="1889" parent="1836" name="email_user">
+    <argument id="1893" parent="1836">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
+    </argument>
+    <argument id="1894" parent="1837" name="email_user">
       <Position>1</Position>
       <DataType>text|0s</DataType>
       <DefaultExpression>NULL::text</DefaultExpression>
     </argument>
-    <argument id="1890" parent="1836" name="id_from_user">
+    <argument id="1895" parent="1837" name="id_from_user">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <DefaultExpression>NULL::integer</DefaultExpression>
     </argument>
-    <argument id="1891" parent="1836">
+    <argument id="1896" parent="1837">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>boolean|0s</DataType>
     </argument>
-    <argument id="1892" parent="1837" name="num">
+    <argument id="1897" parent="1838" name="num">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
     </argument>
-    <argument id="1893" parent="1837">
+    <argument id="1898" parent="1838">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>text|0s</DataType>
+    </argument>
+    <argument id="1899" parent="1839">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>trigger|0s</DataType>
     </argument>
   </database-model>
 </dataSource>
