@@ -160,6 +160,7 @@ create table expenses(
     id_tag int NULL,
     paid BOOLEAN NOT NULL default false,
     value REAL NOT NULL,
+    date DATE null,
     reminderCreated DATE NULL,
     paid_day DATE NULL,
     CONSTRAINT id_user
@@ -169,12 +170,15 @@ create table expenses(
 --         FOREIGN KEY(id_tag)
 --             references tags(id_tag)
 );
+-- ALTER TABLE expenses
+-- ADD COLUMN date DATE null;
+-- drop index expenses_date_idx;
 create INDEX
     concurrently expenses_date_idx
     on
         expenses
-            using btree(reminderCreated);
--- drop view expenses_tag_order_user_id;
+            using btree(date);
+drop view expenses_tag_order_user_id;
 create or replace VIEW expenses_tag_order_user_id AS
     SELECT expenses.id_user as id_user,
            expenses.id_expense as id_expense,
@@ -182,6 +186,7 @@ create or replace VIEW expenses_tag_order_user_id AS
            expenses.description as description,
            expenses.paid as paid,
            expenses.value as value,
+           expenses.date as date,
            expenses.reminderCreated as reminderCreated,
            expenses.paid_day as paid_day
     FROM expenses
@@ -209,9 +214,9 @@ create or replace function change_expenses_tag_order_user_id_function() returns 
             if(new.paid is null) then
                 new.paid := false;
             end if;
-            insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, id_tag)
+            insert into expenses (id_user, description, value,paid, reminderCreated, paid_day, date, id_tag)
                             values (new.id_user, new.description, new.value, new.paid, new.reminderCreated,
-                                                                            new.paid_day, id_tag_var);
+                                                                            new.paid_day, new.date, id_tag_var);
 
             return new;
         end;

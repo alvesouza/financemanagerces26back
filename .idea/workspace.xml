@@ -26,12 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8a40426-f855-4858-b0cc-d5326e4822e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/6dfc309c-4840-444f-b998-95ce073587d8/storage_v2/_src_/database/dd9p8pp2k0skrh.xK9aDw/schema/public.abK9xQ.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configEnv.js" beforeDir="false" afterPath="$PROJECT_DIR$/configEnv.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/create_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/insert_database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database/insert_database.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Api/expense/expense.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expense.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/expense/expensesToChart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Api/tag/tag.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/tag/tag.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/Api/user/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/Api/user/user.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +355,35 @@
       <option name="project" value="LOCAL" />
       <updated>1603321683155</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="fecha conexões, problema com o cors">
+      <created>1603322987853</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1603322987853</updated>
+    </task>
+    <task id="LOCAL-00039" summary="fecha todas conexoes com try">
+      <created>1603323105366</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1603323105366</updated>
+    </task>
+    <task id="LOCAL-00040" summary="conserta a presença do token na query">
+      <created>1603323892480</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1603323892480</updated>
+    </task>
+    <task id="LOCAL-00041" summary="conserta a presença do token na query">
+      <created>1603324304985</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1603324304985</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,9 +419,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="inicio de uso de cookies" />
-    <MESSAGE value="banco finalizado, falta views e indexes" />
-    <MESSAGE value="para a integração com o banco falta, as rotas dos expenses" />
     <MESSAGE value="termino da integracao com o banco, falta debugar" />
     <MESSAGE value="finalização dos testes" />
     <MESSAGE value="knexfile, para escolha de variaveis de ambiente" />
@@ -413,7 +441,10 @@
     <MESSAGE value="/expensestochart recebe apenas token" />
     <MESSAGE value="configuração das pool para o remoto" />
     <MESSAGE value="fecha conexões" />
-    <option name="LAST_COMMIT_MESSAGE" value="fecha conexões" />
+    <MESSAGE value="fecha conexões, problema com o cors" />
+    <MESSAGE value="fecha todas conexoes com try" />
+    <MESSAGE value="conserta a presença do token na query" />
+    <option name="LAST_COMMIT_MESSAGE" value="conserta a presença do token na query" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2226" y="213" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603291797141">
@@ -424,34 +455,34 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2619" y="356" width="583" height="403" key="#com.intellij.fileTypes.FileTypeChooser/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603181522909" />
-    <state width="1240" height="265" key="GridCell.Tab.0.bottom" timestamp="1603319123959">
+    <state width="1240" height="265" key="GridCell.Tab.0.bottom" timestamp="1603326515531">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603319123959" />
-    <state width="1240" height="265" key="GridCell.Tab.0.center" timestamp="1603319123959">
+    <state width="1240" height="265" key="GridCell.Tab.0.bottom/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
+    <state width="1240" height="265" key="GridCell.Tab.0.center" timestamp="1603326515531">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603319123959" />
-    <state width="1240" height="265" key="GridCell.Tab.0.left" timestamp="1603319123959">
+    <state width="1240" height="265" key="GridCell.Tab.0.center/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
+    <state width="1240" height="265" key="GridCell.Tab.0.left" timestamp="1603326515531">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603319123959" />
-    <state width="1240" height="265" key="GridCell.Tab.0.right" timestamp="1603319123959">
+    <state width="1240" height="265" key="GridCell.Tab.0.left/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
+    <state width="1240" height="265" key="GridCell.Tab.0.right" timestamp="1603326515531">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="1291" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@0.29.1920.1051" timestamp="1603318695750" />
-    <state width="1240" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603319123959" />
+    <state width="1240" height="265" key="GridCell.Tab.0.right/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603326515531" />
     <state x="2617" y="238" width="587" height="640" key="RollbackChangesDialog" timestamp="1603309882694">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2617" y="238" width="587" height="640" key="RollbackChangesDialog/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603309882694" />
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603321694457">
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1603323898277">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603321694457" />
+    <state x="2511" y="290" width="800" height="535" key="Vcs.Push.Dialog.v2/1920.0.1920.1080/0.29.1920.1051@1920.0.1920.1080" timestamp="1603323898277" />
     <state x="2785" y="444" width="367" height="255" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1603296987243">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>

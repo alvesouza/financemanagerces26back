@@ -37,9 +37,9 @@ router.get('/', (req, res) => {
         } else {
 
             var query = "select * from expenses_tag_order_user_id\n" +
-                "where remindercreated >= '"+begin.getFullYear()+"-"+parseInt(begin.getMonth()+1)+"-"+begin.getDate()+"'\n" +
+                "where date >= '"+begin.getFullYear()+"-"+parseInt(begin.getMonth()+1)+"-"+begin.getDate()+"'\n" +
                 "  and\n" +
-                "      remindercreated <= '"+end.getFullYear()+"-"+parseInt(end.getMonth()+1)+"-"+end.getDate()+"' and id_user = $1;";
+                "      date <= '"+end.getFullYear()+"-"+parseInt(end.getMonth()+1)+"-"+end.getDate()+"' and id_user = $1;";
             var values = [req.signedCookies.id];
 
             // console.log('///////////////////////////\n',query);
