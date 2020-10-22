@@ -18,8 +18,10 @@ values (1, 'Conta da Telefone', 275.57, true, '2018-11-04', '2018-11-03');
 insert into expenses_tag_order_user_id(id_user, tag, description, value, remindercreated, paid)
 values (3, 'licor', 'Conta da gás', 275.57, '2020-01-14', null);
 
-insert into expenses_tag_order_user_id(id_user, tag, description, value, remindercreated, paid)
-values (23, 'licor', 'Conta da gás', 275.57, '2020-10-20', null);
+insert into expenses_tag_order_user_id(id_user, tag, description, value, date, paid)
+values (16, 'Teste01', 'Teste01 des', 275.57, '2020-10-20', null),
+       (16, 'Teste02', 'Teste02 des', 2755.57, '2020-10-21', null),
+       (16, 'Teste03', 'Teste03 des', 21475.57, '2020-10-22', null);
 
 select * from expenses_tag_order_user_id
 where remindercreated >= '2020-10-14'

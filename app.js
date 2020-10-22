@@ -32,9 +32,10 @@ const translator = {remidercreated:"remiderCreated"};
 // set a cookie
 app.use(cors());
 app.use(function (req, res, next) {
-  if (req.query){
-    req.body = req.query;
-  }
+  // if (req.query){
+  //   req.body = req.query;
+  // }
+  req.body["remindercreated"] = req.query["remindercreated"]
   req.body["reminderCreated"] = req.body["remindercreated"]
   console.log(req.body);
   // check if client sent cookie
