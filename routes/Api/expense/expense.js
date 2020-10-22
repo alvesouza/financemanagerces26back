@@ -54,6 +54,8 @@ router.post('/', (req, res) => {
 router.delete('/', (req, res) => {
     req.signedCookies.id = req.body.token;
     console.log('req.body delete ====>',req.body);
+    console.log('req.query delete ====>',req.query);
+    console.log('req.params delete ====>',req.params);
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
