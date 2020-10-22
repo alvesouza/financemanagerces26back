@@ -35,8 +35,12 @@ app.use(function (req, res, next) {
   // if (req.query){
   //   req.body = req.query;
   // }
-  req.body["remindercreated"] = req.query["remindercreated"]
-  req.body["reminderCreated"] = req.body["remindercreated"]
+  if(req.query["remindercreated"]){
+    req.body["remindercreated"] = req.query["remindercreated"]
+  }
+  if(req.body["remindercreated"]){
+    req.body["reminderCreated"] = req.body["remindercreated"]
+  }
   console.log(req.body);
   // check if client sent cookie
   // var cookie = req.cookies.cookieName;

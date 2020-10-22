@@ -53,6 +53,7 @@ router.post('/', (req, res) => {
 
 router.delete('/', (req, res) => {
     req.signedCookies.id = req.body.token;
+    console.log(req.body);
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -64,7 +65,7 @@ router.delete('/', (req, res) => {
             res.status(400).send({error: err});
             return;
         } else {
-            var query = "delete from expenses where id_expenses = $1 and id_user = $2";
+            var query = "delete from expenses where id_expense = $1 and id_user = $2";
             var values = [req.body.id, req.signedCookies.id];
 
             client.query(query, values, function (err/*, result*/) {
@@ -86,48 +87,70 @@ router.delete('/', (req, res) => {
     });
 });
 
-// router.put('/',(req, res) => {
-//     // var id = req.body.id;
-//     // var tag = req.body.tag;
-//     // var value = req.body.value;
-//     // var description = req.body.description;
-//     // var paid = req.body.paid;
-//     // var reminderCreated = req.body.reminderCreated;
-//
-//     req.signedCookies.id = req.body.token;
-//     pool.connect(function (err, client/*, done*/) {
-//         if (err) {
-//             console.log(err);
-//             try {
-//                 client.release();
-//             }catch (e) {
-//                 console.log(e);
-//             }
-//             res.status(400).send({error: err});
-//             return;
-//         } else {
-//             var query = "insert into users(account_type, name, email, password) values ('S',$1,$2,$3)";
-//             var values = [req.body.name, req.body.email, hashing.generate_hash_sync(req.body.password)];
-//
-//             client.query(query, values, function (err/*, result*/) {
-//
-//                 try {
-//                     client.release();
-//                 }catch (e) {
-//                     console.log(e);
-//                 }
-//                 if (err) {
-//                     console.log(err);
-//                     res.status(400).send({error: err});
-//                     return;
-//                 } else {
-//                     res.status(200).send(true);
-//                     return;
-//                 }
-//             });
-//         }
-//     });
-// });
+router.put('/',(req, res) => {
+    // var id = req.body.id;
+    // var tag = req.body.tag;
+    // var value = req.body.value;
+    // var description = req.body.description;
+    // var paid = req.body.paid;
+    // var reminderCreated = req.body.reminderCreated;
+
+    req.signedCookies.id = req.body.token;
+    pool.connect(function (err, client/*, done*/) {
+        console.log('query ', req.query);
+        console.log('body ', req.body);
+        if (err) {
+            console.log(err);
+            try {
+                client.release();
+            }catch (e) {
+                console.log(e);
+            }
+            res.status(400).send({error: err});
+            return;
+        } else {
+            var query = "update expenses_tag_order_user_id set ";
+            var values = [];//[ req.signedCookies.id];
+            var i = 1;
+            var entra = true;
+            for (const obKey in req.body) {
+                if(!(obKey.localeCompare('id') == 0 || obKey.localeCompare('token') == 0||
+                    obKey.localeCompare('remindercreated') == 0 || obKey.localeCompare('id_user') == 0 ||
+                                                                        obKey.localeCompare('id_expense') == 0)){
+                    if(entra){
+                        query = query + ' '+obKey + ' = $' + i;
+                        entra = false;
+                    }else {
+                        query = query + ', '+obKey + ' = $' + i;
+                    }
+
+                    i += 1;
+                    values.push(req.body[obKey])
+                }
+            }
+            query = query + ' where id_user = $' + (i)+ ' and '+ ' id_expense = $' + (i+1);
+            values.push(req.signedCookies.id)
+            values.push(req.body.id_expense)
+            console.log('query out is ',query)
+            client.query(query, values, function (err/*, result*/) {
+
+                try {
+                    client.release();
+                }catch (e) {
+                    console.log(e);
+                }
+                if (err) {
+                    console.log(err);
+                    res.status(400).send({error: err});
+                    return;
+                } else {
+                    res.status(200).send(true);
+                    return;
+                }
+            });
+        }
+    });
+});
 
 router.get('/', (req, res) => {
     console.log('req.cookies user is ', req.cookies);

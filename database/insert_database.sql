@@ -45,7 +45,7 @@ LEFT JOIN tags on tags.id_tag = expenses.id_tag;
 
 delete from users where id_user = 1;
 update expenses_tag_order_user_id
-set date = remindercreated where date != remindercreated and remindercreated is not null;
+set paid = true where id_expense=22 and id_user = 10;
 
 select create_id_validation('pedro@gmail.com');
 
