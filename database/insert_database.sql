@@ -43,7 +43,7 @@ SELECT *
 FROM expenses
 LEFT JOIN tags on tags.id_tag = expenses.id_tag;
 
-delete from users where id_user = 1;
+delete from expenses where id_user = 16 and id_expense = 5;
 update expenses_tag_order_user_id
 set paid = true where id_expense=22 and id_user = 10;
 

@@ -53,7 +53,7 @@ router.post('/', (req, res) => {
 
 router.delete('/', (req, res) => {
     req.signedCookies.id = req.body.token;
-    console.log(req.body);
+    console.log('req.body delete ====>',req.body);
     pool.connect(function (err, client/*, done*/) {
         if (err) {
             console.log(err);
@@ -67,8 +67,9 @@ router.delete('/', (req, res) => {
         } else {
             var query = "delete from expenses where id_expense = $1 and id_user = $2";
             var values = [req.body.id, req.signedCookies.id];
-
-            client.query(query, values, function (err/*, result*/) {
+            console.log('delete query is ', query);
+            console.log('delete values is ', values);
+            client.query(query, values, function (err, result) {
                 try {
                     client.release();
                 }catch (e) {
@@ -79,6 +80,7 @@ router.delete('/', (req, res) => {
                     res.status(400).send({error: err});
                     return;
                 } else {
+                    console.log('delete result is ', result);
                     res.status(200).send();
                     return;
                 }
