@@ -55,7 +55,7 @@ app.use(function (req, res, next) {
   //   res.setHeader('Access-Control-Allow-Origin', '*');
   // }
   //
-  // res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "*");
   // res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   // res.header("Access-Control-Allow-Origin", "*");
   // //Quais são os métodos que a conexão pode realizar na API
