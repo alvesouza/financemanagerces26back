@@ -46,11 +46,13 @@ app.use(function (req, res, next) {
   //code injection protection
   var re = /[<][ ]*[s][c][r][i][p][t][ ]*[>]/;
   for (values in req.body){
+    console.log('teste body',values)
     if(values instanceof String && re.test(values)){
       next(createError(404));
     }
   }
   for (values in req.query){
+    console.log('teste query ',values)
     if(values instanceof String && re.test(values)){
       next(createError(404));
     }
