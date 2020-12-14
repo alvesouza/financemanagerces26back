@@ -17,7 +17,6 @@ returns text
             chars text[] := '{0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,' ||
                             '       V,W,X,Y,Z,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z}';
             result text = '';
-            i int := 0;
         begin
             if num < 0 then
                 raise exception 'num has to be bigger than zero';
@@ -143,7 +142,7 @@ create INDEX
         tags
             using hash(id_user);
 create or replace VIEW tags_tag_view AS
-    select * from tags order by tag asc, id_user asc, id_tag asc;
+    select * from tags order by tag, id_user, id_tag;
 
 
 /*--------------------------------------------------------------------------------------------*/
@@ -191,8 +190,8 @@ create or replace VIEW expenses_tag_order_user_id AS
            expenses.paid_day as paid_day
     FROM expenses
     LEFT JOIN tags on tags.id_tag = expenses.id_tag
-    order by id_user asc,
-             id_expense asc;
+    order by id_user,
+             id_expense;
 
 create or replace function create_expenses_tag_order_user_id_function() returns TRIGGER
     as
