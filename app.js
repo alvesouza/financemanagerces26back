@@ -48,13 +48,13 @@ app.use(function (req, res, next) {
   for (values in req.body){
     console.log('teste body',req.body[values])
     if(re.test(req.body[values])){
-      next(createError(404));
+      next(createError(403));
     }
   }
   for (values in req.query){
     console.log('teste query ',req.query[values])
     if(re.test(req.query[values])){
-      next(createError(404));
+      next(createError(403));
     }
   }
   next(); // <-- important!
